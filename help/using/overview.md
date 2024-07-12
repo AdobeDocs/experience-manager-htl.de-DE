@@ -3,7 +3,7 @@ title: HTL-Übersicht
 description: Erfahren Sie, wie AEM die HTML-Vorlagensprache (HTL) unterstützt, um ein produktives Web-Framework auf Unternehmensebene anzubieten, das die Sicherheit erhöht und Personen ohne Java-Kenntnisse, die HTML entwickeln, eine bessere Beteiligung an AEM-Projekten ermöglicht.
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '707'
 ht-degree: 100%
 
