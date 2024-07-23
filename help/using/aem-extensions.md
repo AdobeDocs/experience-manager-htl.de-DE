@@ -1,11 +1,11 @@
 ---
 title: AEM-Erweiterungen
-description: AEM bietet Erweiterungen der HTL-Spezifikation für AEM an, um Ihnen als Entwickler/in die Arbeit zu erleichtern.
+description: AEM bietet Erweiterungen der HTL-Spezifikation, die Sie als Entwickler AEM können.
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
-source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
+source-git-commit: ebeac25c38b81c92011c163c7860688f43547a7d
 workflow-type: tm+mt
-source-wordcount: '234'
-ht-degree: 100%
+source-wordcount: '228'
+ht-degree: 64%
 
 ---
 
@@ -21,15 +21,15 @@ Die gleichen [drei zusätzlichen Optionen](https://sling.apache.org/documentatio
 * `hint`
 * `basename`
 
-In AEM wird die [Internationalisierungsunterstützung](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-dev.html?lang=de) für HTL jedoch mit Hilfe der API aus dem `com.day.cq.i18n`-Paket implementiert.
+In AEM wird die [Internationalisierungsunterstützung](https://experienceleague.adobe.com/en/docs/experience-manager-65/content/implementing/developing/components/internationalization/i18n-dev) für HTL jedoch mit Hilfe der API aus dem `com.day.cq.i18n`-Paket implementiert.
 
-## data-sly-include {#data-sly-include}
+## `data-sly-include` {#data-sly-include}
 
 In AEM kann `data-sly-include` eine zusätzliche Option `wcmmode` annehmen, die den [WCM-Modus](https://developer.adobe.com/experience-manager/reference-materials/cloud-service/javadoc/com/day/cq/wcm/api/WCMMode.html) für das enthaltene Skript steuert. Die zulässigen Werte sind die Namen der verfügbaren Aufzählungskonstanten.
 
-## data-sly-resource {#data-sly-resource}
+## `data-sly-resource` {#data-sly-resource}
 
-Zusätzlich zu Pfaden und `Resources` kann das `data-sly-resource`-Blockelement auch mit [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) oder [`Records` arbeiten.](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) Bei beiden Ansätzen muss die Eigenschaft von `resourceName` als Zeichenfolge angegeben werden. Sein Wert wird verwendet, um eine [synthetische Ressource](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html) zu erstellen, die in den Rendering-Kontext aufgenommen wird. Der Rest der Eigenschaften von `Record` oder `Map`, die an `data-sly-resource` übergeben wurden, werden als normale `Resource`-Eigenschaften verwendet. Wenn die `sling:resourceType`-Eigenschaft in dieser Zuordnung fehlt, wird als Ressourcentyp entweder der Wert der `resourceType`-[Ausdrucksoption](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource) oder der Ressourcentyp der aktuellen Ressource, die das Rendering steuert, angenommen.
+Zusätzlich zu Pfaden und `Resources` kann das `data-sly-resource`-Blockelement auch mit [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) oder [`Records` arbeiten.](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) Bei beiden Ansätzen muss die Eigenschaft von `resourceName` als Zeichenfolge angegeben werden. Der Wert wird verwendet, um eine [Synthetische Ressource](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html) zu erstellen, die im Rendering-Kontext enthalten ist. Die übrigen Eigenschaften der `Record` oder der `Map`, die an `data-sly-resource` übergeben werden, werden als normale `Resource`-Eigenschaften verwendet. Wenn die Eigenschaft `sling:resourceType` in dieser Zuordnung fehlt, wird davon ausgegangen, dass der Ressourcentyp entweder der Wert der Ausdrucksoption `resourceType` [3} oder der Ressourcentyp der aktuellen Ressource ist, die das Rendering auslöst.](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource)
 
 Unter Berücksichtigung der folgenden Zuordnungs-/Datensatz-Eigenschaften, die im Skriptbereich als `map` verfügbar sind:
 

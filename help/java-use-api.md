@@ -2,10 +2,10 @@
 title: HTL-Java-Anwendungs-API
 description: Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmethoden in einer benutzerdefinierten Java-Klasse.
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
-source-git-commit: 83f07cab5e2f4604701708f6a1a4bc19e3b54107
+source-git-commit: ebeac25c38b81c92011c163c7860688f43547a7d
 workflow-type: tm+mt
-source-wordcount: '1162'
-ht-degree: 100%
+source-wordcount: '1137'
+ht-degree: 69%
 
 ---
 
@@ -16,7 +16,7 @@ Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmet
 
 ## Nutzungsszenario {#use-case}
 
-Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmethoden in einer benutzerdefinierten Java-Klasse über `data-sly-use`. Dadurch kann die gesamte komplexe Geschäftslogik im Java-Code verschachtelt werden, während der HTL-Code nur die direkte Markup-Produktion verarbeiten muss.
+Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmethoden in einer benutzerdefinierten Java-Klasse über `data-sly-use`. Diese Funktion ermöglicht die Einkapselung aller komplexen Geschäftslogik in den Java-Code, während der HTL-Code nur die direkte Markup-Produktion behandelt.
 
 Ein Java-Anwendungs-API-Objekt kann ein einfacher POJO sein, der von einer bestimmten Implementierung über den Standardkonstruktor von POJO instanziiert wird.
 
@@ -39,9 +39,9 @@ Dieses Beispiel veranschaulicht die Verwendung der Anwendungs-API.
 
 >[!NOTE]
 >
->Dieses Beispiel ist vereinfacht, um seine Verwendung zu veranschaulichen. In einer Produktionsumgebung wird empfohlen, [Sling-Modelle](https://sling.apache.org/documentation/bundles/models.html) zu verwenden.
+>Dieses Beispiel wurde vereinfacht, nur um seine Verwendung zu veranschaulichen. In einer Produktionsumgebung empfiehlt Adobe die Verwendung von [Sling-Modellen](https://sling.apache.org/documentation/bundles/models.html).
 
-Wir starten mit einer HTL-Komponente namens `info`, die keine Anwendungsklasse hat. Sie besteht aus einer einzelnen Datei, `/apps/my-example/components/info.html`
+Beginnen Sie mit einer HTL-Komponente namens `info` , die keine Anwendungsklasse hat. Sie besteht aus einer einzelnen Datei, `/apps/my-example/components/info.html`
 
 ```xml
 <div>
@@ -50,7 +50,7 @@ Wir starten mit einer HTL-Komponente namens `info`, die keine Anwendungsklasse h
 </div>
 ```
 
-Wir fügen zudem etwas Inhalt für diese unter `/content/my-example/` darzustellende Komponente hinzu:
+Fügen Sie nun Inhalte für diese Komponente hinzu, die bei `/content/my-example/` gerendert werden sollen:
 
 ```xml
 {
@@ -60,7 +60,7 @@ Wir fügen zudem etwas Inhalt für diese unter `/content/my-example/` darzustell
 }
 ```
 
-Wenn auf diesen Inhalt zugegriffen wird, wird die HTL-Datei ausgeführt. Innerhalb des HTL-Codes verwenden wir das Kontextobjekt `properties`, um auf `title` und `description` der aktuellen Ressource zuzugreifen und sie anzuzeigen. Die Ausgabedatei `/content/my-example.html` lautet:
+Wenn auf diesen Inhalt zugegriffen wird, wird die HTL-Datei ausgeführt. Innerhalb des HTL-Codes wird das Kontextobjekt `properties` verwendet, um auf die `title` und `description` der aktuellen Ressource zuzugreifen und sie anzuzeigen. Die Ausgabedatei `/content/my-example.html` lautet:
 
 ```html
 <div>
@@ -77,7 +77,7 @@ Die Komponente `info` benötigt in ihrer gegebenen Form keine Anwendungsklasse, 
 >
 >Eine Anwendungsklasse sollte nur verwendet werden, wenn eine Aktion nicht allein in HTL ausgeführt werden kann.
 
-Angenommen, Sie möchten, dass die Komponente `info` die Eigenschaften `title` und `description` der Ressource anzeigt, jedoch komplett in Kleinschreibung. Da HTL über keine Methode zur Zeichenfolgen-Kleinschreibung verfügt, benötigen Sie eine Anwendungsklasse. Wir können dies tun, indem wir eine Java-Anwendungsklasse hinzufügen und `/apps/my-example/component/info/info.html` wie folgt ändern:
+Angenommen, Sie möchten, dass die Komponente `info` die Eigenschaften `title` und `description` der Ressource anzeigt, jedoch komplett in Kleinschreibung. Da HTL über keine Methode zur Kleinschreibung von Zeichenfolgen verfügt, benötigen Sie eine Anwendungsklasse, indem Sie eine Java-Anwendungsklasse hinzufügen und `/apps/my-example/component/info/info.html` wie folgt ändern:
 
 ```xml
 <div data-sly-use.info="Info">
@@ -86,7 +86,7 @@ Angenommen, Sie möchten, dass die Komponente `info` die Eigenschaften `title` u
 </div>
 ```
 
-Zusätzlich erstellen wir `/apps/my-example/component/info/Info.java`.
+Außerdem wird `/apps/my-example/component/info/Info.java` erstellt.
 
 ```java
 package apps.my_example.components.info;
@@ -113,9 +113,9 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-Weitere Einzelheiten finden Sie in den [Javadocs für `com.adobe.cq.sightly.WCMUsePojo`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html).
+Weitere Informationen finden Sie in den [Java-Dokumenten für `com.adobe.cq.sightly.WCMUsePojo`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) .
 
-Lassen Sie uns nun die verschiedenen Teile des Codes durchgehen.
+Lassen Sie uns nun durch die verschiedenen Teile des Codes gehen.
 
 ### Lokale vs. Bundle-Java-Klasse {#local-vs-bundle-java-class}
 
@@ -133,7 +133,7 @@ In diesem Beispiel wird eine lokale Installation verwendet.
 
 ### Java-Paket ist der Repository-Pfad {#java-package-is-repository-path}
 
-Wenn eine lokale Installation verwendet wird, muss der Paketname der Anwendungsklasse mit dem des Repository-Ordner-Speicherorts übereinstimmen, wobei alle Bindestriche im Pfad durch Unterstriche im Paketnamen ersetzt werden.
+Bei Verwendung einer lokalen Installation muss der Paketname der Anwendungsklasse mit dem Speicherort des Repository-Ordners übereinstimmen. Ersetzen Sie alle Bindestriche im Pfad durch Unterstriche im Paketnamen.
 
 In diesem Fall befindet sich `Info.java` unter `/apps/my-example/components/info`. Daher lautet das Paket `apps.my_example.components.info`:
 
@@ -155,7 +155,7 @@ public class Info extends WCMUsePojo {
 
 ### Erweitern von `WCMUsePojo` {#extending-wcmusepojo}
 
-Es gibt zwar eine Reihe von Möglichkeiten, eine Java-Klasse mit HTL zu integrieren, jedoch besteht die einfachste Möglichkeit darin, die `WCMUsePojo`-Klasse zu erweitern. Für unser Beispiel `/apps/my-example/component/info/Info.java`:
+Es gibt zwar eine Reihe von Möglichkeiten, eine Java-Klasse mit HTL zu integrieren, jedoch besteht die einfachste Möglichkeit darin, die `WCMUsePojo`-Klasse zu erweitern. Für dieses Beispiel `/apps/my-example/component/info/Info.java`:
 
 ```java
 package apps.my_example.components.info;
@@ -196,11 +196,11 @@ Die Methode [aktivieren](https://developer.adobe.com/experience-manager/referenc
 
 Die Klasse `WCMUsePojo` ermöglicht den Zugriff auf dieselbe Reihe von Kontextobjekten, die in einer HTL-Datei verfügbar sind (siehe das Dokument [Globale Objekte](global-objects.md).)
 
-In einer `WCMUsePojo` erweiternden Klasse ist der Zugriff auf Kontextobjekte nach Name möglich mit
+In einer Klasse, die `WCMUsePojo` erweitert, können Sie mithilfe ihrer Namen auf Kontextobjekte zugreifen:
 
 [`<T> T get(String name, Class<T> type)`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)
 
-Alternativ kann auf häufig verwendete Kontextobjekte auch direkt über die entsprechende Convenience-Methode zugegriffen werden, die in dieser Tabelle aufgeführt ist.
+Alternativ können Sie direkt auf häufig verwendete Kontextobjekte zugreifen, indem Sie die in dieser Tabelle aufgeführte passende Convenience-Methode verwenden.
 
 | Objekt | Convenience-Methode |
 |---|---|
@@ -222,11 +222,11 @@ Alternativ kann auf häufig verwendete Kontextobjekte auch direkt über die ents
 
 ### Getter-Methoden {#getter-methods}
 
-Sobald die Anwendungsklasse initialisiert ist, wird die HTL-Datei ausgeführt. In dieser Phase wird HTL in der Regel den Status verschiedener Mitgliedsvariablen der Anwendungsklasse abrufen und sie für die Darstellung rendern.
+Nachdem die Anwendungsklasse initialisiert wurde, wird die HTL-Datei ausgeführt. Während dieser Phase ruft HTL normalerweise den Status verschiedener Member-Variablen der Anwendungsklasse ab und rendert sie zur Präsentation.
 
 Um den Zugriff auf diese Werte von der HTL-Datei aus zu ermöglichen, müssen Sie benutzerdefinierte Getter-Methoden in der Anwendungsklasse gemäß der folgenden Namenskonvention definieren:
 
-* Eine Methode in der Form `getXyz` stellt in der HTL-Datei eine Objekteigenschaft mit dem Namen `xyz` zur Verfügung.
+* Eine Methode des Formulars `getXyz` stellt in der HTL-Datei bereit, dass eine Objekteigenschaft mit dem Namen `xyz` aufgerufen wird.
 
 In der folgenden Beispieldatei `/apps/my-example/component/info/Info.java` führen die Methoden `getTitle` und `getDescription` dazu, dass die Objekteigenschaften `title` und `description` im Kontext der HTL-Datei zugänglich werden.
 
@@ -247,9 +247,9 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-### Attribut data-sly-use {#data-sly-use-attribute}
+### `data-sly-use` Attribut {#data-sly-use-attribute}
 
-Das Attribut `data-sly-use` wird verwendet, um die Anwendungsklasse innerhalb Ihres HTL-Codes zu initialisieren. In unserem Beispiel deklariert das Attribut `data-sly-use`, dass wir die Klasse `Info` verwenden möchten. Wir können nur den lokalen Namen der Klasse verwenden, da wir eine lokale Installation verwenden (wobei die Java-Quelldatei im selben Ordner wie die HTL-Datei platziert wurde). Wenn wir eine Bundle-Installation verwenden würden, müssten wir den voll qualifizierten Klassennamen angeben.
+Das Attribut `data-sly-use` wird verwendet, um die Anwendungsklasse innerhalb Ihres HTL-Codes zu initialisieren. In diesem Beispiel gibt das Attribut `data-sly-use` an, dass die Klasse `Info` verwendet wird. In diesem Fall können Sie nur den lokalen Namen der Klasse verwenden, da Sie eine lokale Installation verwenden (nachdem Sie die Java-Quelldatei im selben Ordner wie die HTL-Datei platziert haben). Wenn Sie eine Bundle-Installation verwenden, müssen Sie den vollqualifizierten Klassennamen angeben.
 
 Beachten Sie die Verwendung in diesem Beispiel für `/apps/my-example/component/info/info.html`.
 
@@ -288,7 +288,7 @@ Beachten Sie die Verwendung in diesem Beispiel für `/apps/my-example/component/
 
 ### Ausgabe {#output}
 
-Wenn wir nun auf `/content/my-example.html` zugreifen, wird die folgende Datei `/content/my-example.html` ausgegeben.
+Wenn nun auf `/content/my-example.html` zugegriffen wird, wird die folgende `/content/my-example.html` -Datei zurückgegeben.
 
 ```xml
 <div>
@@ -299,11 +299,11 @@ Wenn wir nun auf `/content/my-example.html` zugreifen, wird die folgende Datei `
 
 >[!NOTE]
 >
->Dieses Beispiel wurde vereinfacht, um seine Verwendung zu veranschaulichen. In einer Betreibungsumgebung wird empfohlen, [Sling-Modelle](https://sling.apache.org/documentation/bundles/models.html) zu verwenden.
+>Dieses Beispiel wurde vereinfacht, um seine Verwendung zu veranschaulichen. In einer Produktionsumgebung empfiehlt Adobe die Verwendung von [Sling-Modellen](https://sling.apache.org/documentation/bundles/models.html).
 
 ## Mehr als nur die Grundlagen {#beyond-the-basics}
 
-In diesem Abschnitt werden einige weitere Funktionen vorgestellt, die über das zuvor beschriebene einfache Beispiel hinausgehen.
+In diesem Abschnitt werden einige weitere Funktionen vorgestellt, die über das oben beschriebene einfache Beispiel hinausgehen.
 
 * Übergabe von Parametern an eine Anwendungsklasse
 * Gebündelte Java-Anwendungsklasse

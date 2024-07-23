@@ -2,10 +2,10 @@
 title: Erste Schritte mit HTL
 description: Lernen Sie HTL kennen, das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in AEM, und verstehen Sie die wichtigsten Konzepte der Sprache und ihre grundlegenden Konstrukte.
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
+source-git-commit: ebeac25c38b81c92011c163c7860688f43547a7d
 workflow-type: tm+mt
-source-wordcount: '2147'
-ht-degree: 100%
+source-wordcount: '2050'
+ht-degree: 62%
 
 ---
 
@@ -22,11 +22,11 @@ Dieses Dokument gibt einen Überblick über den Zweck der HTL sowie eine Einfüh
 
 ## HTL-Ebenen {#layers}
 
-HTL, wie es in AEM verwendet wird, kann durch eine Reihe von Ebenen definiert werden.
+In AEM definieren mehrere Ebenen HTL.
 
 1. **[HTL-Spezifikation](specification.md)** – HTL ist eine quelloffene, plattformunabhängige Spezifikation, die von jeder Person frei implementiert werden kann.
 1. **[Sling HTL Scripting Engine](specification.md)** – Das Sling-Projekt hat die Referenzimplementierung von HTL erstellt, die von AEM verwendet wird.
-1. **[AEM-Erweiterungen](specification.md)** – AEM baut auf der Sling HTL Scripting Engine auf, um Entwickelnden praktische, AEM-spezifische Funktionen zu bieten.
+1. **[AEM-Erweiterungen](specification.md)** - AEM baut auf der Sling HTL-Skripterstellungsmodul auf, um Entwicklern für AEM praktische Funktionen zu bieten.
 
 Diese HTL-Dokumentation konzentriert sich auf die Verwendung von HTL zur Entwicklung von AEM-Lösungen. Als solche berührt sie alle drei Ebenen und verknüpft bei Bedarf externe Ressourcen.
 
@@ -50,18 +50,18 @@ Hier finden Sie ein erstes Beispiel, das in der Datei `template.html` enthalten 
 
 Es lassen sich zwei verschiedene Arten von Syntaxen unterscheiden:
 
-* **Block-Anweisungen** – Um das `<h1>`-Element bedingt anzuzeigen, wird ein `data-sly-test`-HTML5-Datenattribut verwendet. HTL bietet mehrere solcher Attribute, die es ermöglichen, jedem HTML-Element ein bestimmtes Verhalten zuzuordnen, und die alle mit dem Präfix `data-sly` versehen sind.
-* **Ausdruckssprache** – HTL-Ausdrücke werden durch die Zeichen `${` und `}` abgegrenzt. Diese Ausdrücke werden zur Laufzeit ausgewertet, und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
+* **Blockanweisungen** - Wenn Sie das Element `<h1>` bedingt anzeigen möchten, verwenden Sie ein `data-sly-test` HTML5-Datenattribut. HTL bietet mehrere solcher Attribute, die es ermöglichen, jedem HTML-Element ein bestimmtes Verhalten zuzuordnen, und die alle mit dem Präfix `data-sly` versehen sind.
+* **Ausdruckssprache** - Die Zeichen `${` und `}` trennen HTL-Ausdrücke. Diese Ausdrücke werden zur Laufzeit ausgewertet, und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
 
 Siehe die [HTL-Spezifikation](specification.md) für Details zu beiden Syntaxen.
 
 ### Das SLY-Element  {#the-sly-element}
 
-Ein zentrales Konzept von HTL ist die Möglichkeit, vorhandene HTML-Elemente wiederzuverwenden, um Blockanweisungen zu definieren, ohne dass zusätzliche Begrenzungszeichen eingefügt werden müssen, die festlegen, wo die Anweisung beginnt und endet. Diese unauffällige Anmerkung des Markups zur Umwandlung eines statischen HTML-Codes in eine funktionierende dynamische Vorlage bietet den Vorteil, dass die Gültigkeit des HTML-Codes nicht beeinträchtigt wird und daher auch als statische Dateien weiterhin korrekt angezeigt werden.
+Ein zentrales Konzept von HTL besteht darin, die Möglichkeit zu bieten, vorhandene HTML-Elemente zur Definition von Blockanweisungen wiederzuverwenden. Durch diese Wiederverwendung müssen keine zusätzlichen Trennzeichen eingefügt werden, um festzulegen, wo die Anweisung beginnt und endet. Wenn Sie das Markup kommentieren, wird statisches HTML unauffällig in eine dynamische Vorlage umgewandelt, ohne die HTML-Gültigkeit zu verändern. Dadurch wird eine ordnungsgemäße Anzeige auch als statische Dateien sichergestellt.
 
-Es kann jedoch vorkommen, dass an der Stelle, an der eine Blockanweisung eingefügt werden soll, kein Element vorhanden ist. Für solche Fälle ist es möglich, ein spezielles `sly`-Element einzufügen, das automatisch aus der Ausgabe entfernt wird, während die angehängten Blockanweisungen ausgeführt werden und ihr Inhalt entsprechend angezeigt wird.
+Es kann jedoch vorkommen, dass an der Stelle, an der eine Blockanweisung eingefügt werden soll, kein Element vorhanden ist. In diesem Fall können Sie ein spezielles `sly` -Element einfügen. Dieses Element wird automatisch aus der Ausgabe entfernt, während die angehängten Blockanweisungen ausgeführt und der Inhalt entsprechend angezeigt wird.
 
-Im folgenden Beispiel...
+Im folgenden Beispiel:
 
 ```xml
 <sly data-sly-test="${properties.jcr:title && properties.jcr:description}">
@@ -70,14 +70,14 @@ Im folgenden Beispiel...
 </sly>
 ```
 
-... wird etwas wie das folgende HTML ausgegeben, aber nur, wenn sowohl eine `jcr:title`- als auch eine `jcr:description`-Eigenschaft definiert sind und keine der beiden leer ist:
+Gibt etwas wie die folgende HTML aus, jedoch nur, wenn sowohl eine `jcr:title` - als auch eine `jcr:description` -Eigenschaft definiert ist und keiner von ihnen leer ist:
 
 ```xml
 <h1>MY TITLE</h1>
 <p>MY DESCRIPTION</p>
 ```
 
-Zu beachten ist, dass das Element `sly` nur dann verwendet werden sollte, wenn kein vorhandenes Element mit der Blockanweisung versehen werden konnte. Dies liegt daran, dass `sly`-Elemente den Wert der Sprache mindern, der darin besteht, das statische HTML nicht zu verändern, wenn es dynamisch gemacht wird.
+Zu beachten ist, dass das Element `sly` nur dann verwendet werden sollte, wenn kein vorhandenes Element mit der Blockanweisung versehen werden konnte. Der Grund dafür ist, dass `sly` -Elemente den von der Sprache angebotenen Wert davon abhalten, die statische HTML nicht zu ändern, wenn sie dynamisch wird.
 
 Wäre das vorherige Beispiel beispielsweise in ein `div`-Element eingeschlossen worden, dann wäre das hinzugefügte `sly`-Element missbräuchlich:
 
@@ -90,7 +90,7 @@ Wäre das vorherige Beispiel beispielsweise in ein `div`-Element eingeschlossen 
 </div>
 ```
 
-und das Element `div` hätte mit der Bedingung versehen werden können:
+Und das Element `div` hätte mit der Bedingung kommentiert werden können:
 
 ```xml
 <div data-sly-test="${properties.jcr:title && properties.jcr:description}">
@@ -108,21 +108,21 @@ Das folgende Beispiel zeigt einen HTL-Kommentar in der ersten Zeile und einen HT
 <!-- An HTML Comment -->
 ```
 
-HTL-Kommentare sind HTML-Kommentare mit einer zusätzlichen JavaScript-ähnlichen Syntax. Der gesamte HTL-Kommentar und alles, was darin steht, wird vom Prozessor vollständig ignoriert und aus der Ausgabe entfernt.
+HTL-Kommentare sind HTML-Kommentare mit einer zusätzlichen JavaScript-ähnlichen Syntax. Der Prozessor ignoriert den gesamten HTL-Kommentar und alles darin, wodurch er aus der Ausgabe entfernt wird.
 
-Der Inhalt von Standard-HTML-Kommentaren wird jedoch durchgelassen und die Ausdrücke innerhalb des Kommentars werden ausgewertet.
+Der Inhalt von standardmäßigen HTML-Kommentaren wird jedoch weitergeleitet und die Ausdrücke innerhalb des Kommentars werden ausgewertet.
 
 HTML-Kommentare können keine HTL-Kommentare enthalten und umgekehrt.
 
 ### Spezielle Kontexte  {#special-contexts}
 
-Um HTL bestmöglich zu verwenden, ist es wichtig, die Konsequenzen zu verstehen, die sich daraus ergeben, dass sie auf der HTML-Syntax basiert.
+Um HTL optimal zu nutzen, ist es wichtig, die Folgen der Verwendung anhand der HTML-Syntax gut zu verstehen.
 
 Weitere Einzelheiten finden Sie im Abschnitt [Anzeigekontext](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#121-display-context) der HTL-Spezifikation.
 
 ### Element- und Attributnamen  {#element-and-attribute-names}
 
-Ausdrücke können nur in HTML-Text oder Attributwerte eingefügt werden, nicht aber in Element- oder Attributnamen, sonst wäre es kein gültiges HTML mehr. Zum dynamischen Festlegen der Elementnamen kann die Anweisung `data-sly-element` für die gewünschten Elemente verwendet werden und zum dynamischen Festlegen der Attributnamen oder sogar zum Festlegen von mehreren Attributen gleichzeitig, die Anweisung `data-sly-attribute`.
+Ausdrücke können nur in HTML-Text oder Attributwerte eingefügt werden, nicht aber in Element- oder Attributnamen, sonst wäre es kein gültiges HTML mehr. Um Elementnamen dynamisch festzulegen, kann die Anweisung `data-sly-element` für die gewünschten Elemente verwendet werden und um Attributnamen dynamisch festzulegen, selbst wenn mehrere Attribute gleichzeitig festgelegt werden, kann die Anweisung `data-sly-attribute` verwendet werden.
 
 ```xml
 <h1 data-sly-element="${myElementName}" data-sly-attribute="${myAttributeMap}">...</h1>
@@ -130,17 +130,17 @@ Ausdrücke können nur in HTML-Text oder Attributwerte eingefügt werden, nicht 
 
 ### Kontexte ohne Blockanweisungen {#contexts-without-block-statements}
 
-Da HTL Datenattribute zur Definition von Blockanweisungen verwendet, ist es nicht möglich, solche Blockanweisungen in folgenden Kontexten zu definieren, und es können dort nur Ausdrücke verwendet werden:
+Da HTL Datenattribute zum Definieren von Blockanweisungen verwendet, ist es nicht möglich, solche Blockanweisungen innerhalb der folgenden Kontexte zu definieren und dort können nur Ausdrücke verwendet werden:
 
 * HTML-Kommentare
 * Skript-Elemente
 * Stil-Elemente
 
-Der Grund besteht darin, dass der Inhalt dieser Kontexte Text ist und keine HTML, wobei darin enthaltene HTML-Elemente als einfache Zeichendaten erkannt werden. Ohne echte HTML-Elemente ist die Ausführung von `data-sly`-Attributen demnach nicht möglich.
+Der Grund besteht darin, dass der Inhalt dieser Kontexte Text ist und keine HTML, wobei darin enthaltene HTML-Elemente als einfache Zeichendaten erkannt werden. Ohne echte HTML-Elemente können also auch keine `data-sly` -Attribute ausgeführt werden.
 
-Dies mag nach einer erheblichen Einschränkung klingen, ist jedoch erwünscht, da die HTML Template Language nicht dazu missbraucht werden sollte, Ausgaben zu erzeugen, die nicht HTML sind. Im Abschnitt [Anwendungs-API für den Zugriff auf die Logik](#use-api-for-accessing-logic) unten wird erläutert, wie zusätzliche Logik über die Vorlage abgerufen werden kann, die verwendet werden kann, wenn die komplexe Ausgabe für diese Kontexte vorbereitet werden muss. Zum Beispiel kann die Logik der Komponente zum einfachen Senden von Daten vom Back-End- zum Front-End-Skript eine JSON-Zeichenfolge generieren, die anschließend in einem Datenattribut mit einem einfachen HTL-Ausdruck platziert werden kann.
+Dieser Ansatz kann sich als erhebliche Beschränkung erweisen. Es wird jedoch empfohlen, da die HTML-Vorlagensprache nur eine gültige HTML-Ausgabe generieren sollte. Im Abschnitt [Anwendungs-API für den Zugriff auf die Logik](#use-api-for-accessing-logic) unten wird erläutert, wie zusätzliche Logik über die Vorlage abgerufen werden kann, die verwendet werden kann, wenn die komplexe Ausgabe für diese Kontexte vorbereitet werden muss. Um Daten vom Back-End an ein Front-End-Skript zu senden, generieren Sie eine JSON-Zeichenfolge mit der Logik der Komponente und platzieren Sie sie mithilfe eines einfachen HTL-Ausdrucks in einem Datenattribut.
 
-Das folgende Beispiel veranschaulicht das Verhalten für HTML-Kommentare, aber in Skript- oder Stilelementen würde das gleiche Verhalten beobachtet werden:
+Im folgenden Beispiel wird das Verhalten bei HTML-Kommentaren veranschaulicht. In Skript- oder Stilelementen wird jedoch dasselbe Verhalten beobachtet:
 
 ```xml
 <!--
@@ -149,7 +149,7 @@ Das folgende Beispiel veranschaulicht das Verhalten für HTML-Kommentare, aber i
 -->
 ```
 
-gibt etwas wie das folgende HTML aus:
+Gibt ungefähr die folgende HTML aus:
 
 ```xml
 <!--
@@ -160,7 +160,7 @@ gibt etwas wie das folgende HTML aus:
 
 ### Explizite Kontexte erforderlich  {#explicit-contexts-required}
 
-Wie im unten folgenden Abschnitt [Automatische kontextsensitive Maskierung](#automatic-context-aware-escaping) erläutert, besteht ein Ziel der HTL darin, das Risiko von Sicherheitslücken beim Cross-Site-Scripting (XSS) zu reduzieren, indem automatisch auf alle Ausdrücke die kontextsensitive Maskierung angewendet wird. Während HTL den Kontext von Ausdrücken, die innerhalb von HTML-Markup platziert sind, automatisch erkennen kann, analysiert es nicht die Syntax von Inline-JavaScript oder CSS. Es ist daher darauf angewiesen, dass die Entwicklerin oder der Entwickler explizit angibt, welcher genaue Kontext auf solche Ausdrücke angewendet werden muss.
+Wie im unten folgenden Abschnitt [Automatische kontextsensitive Maskierung](#automatic-context-aware-escaping) erläutert, besteht ein Ziel der HTL darin, das Risiko von Sicherheitslücken beim Cross-Site-Scripting (XSS) zu reduzieren, indem automatisch auf alle Ausdrücke die kontextsensitive Maskierung angewendet wird. HTL erkennt den Kontext von Ausdrücken im HTML-Markup, analysiert jedoch keine Inline-JavaScript oder CSS, daher müssen Entwickler den genauen Kontext für diese Ausdrücke angeben.
 
 Da die Nichtanwendung der korrekten Maskierung zu XSS-Schwachstellen führt, entfernt HTL daher die Ausgabe aller Ausdrücke, die sich in Skript- und Stilkontexten befinden, wenn der Kontext nicht angegeben wurde.
 
@@ -179,13 +179,13 @@ In diesem Abschnitt werden die allgemeinen Funktionen der HTML-Vorlagensprache k
 
 ### Anwendungs-API für den Zugriff auf die Logik  {#use-api-for-accessing-logic}
 
-Mit der Java-Anwendungs-API der HTML-Vorlagensprache (HTL) wird es einer HTL-Datei ermöglicht, in einer benutzerdefinierten Java-Klasse über `data-sly-use` auf die Hilfsmethoden zuzugreifen. Dadurch kann die gesamte komplexe Geschäftslogik im Java-Code verschachtelt werden, während der HTL-Code nur die direkte Markup-Produktion verarbeiten muss.
+Mit der Java-Anwendungs-API der HTML-Vorlagensprache (HTL) wird es einer HTL-Datei ermöglicht, in einer benutzerdefinierten Java-Klasse über `data-sly-use` auf die Hilfsmethoden zuzugreifen. Dieser Prozess ermöglicht die Einkapselung aller komplexen Geschäftslogik im Java-Code, während der HTL-Code nur die direkte Markup-Produktion behandelt.
 
 Siehe das Dokument [HTL-Java-Anwendungs-API](java-use-api.md) für weitere Details.
 
 ### Automatische kontextsensitive Maskierung {#automatic-context-aware-escaping}
 
-Siehe folgendes Beispiel:
+Betrachten Sie das folgende Beispiel:
 
 ```xml
 <p data-sly-use.logic="logic.js">
@@ -197,7 +197,7 @@ Siehe folgendes Beispiel:
 
 In den meisten Vorlagensprachen führt dieses Beispiel potenziell zu Sicherheitslücken beim Cross-Site-Scripting (XSS), da, selbst wenn alle Variablen automatisch HTML-maskiert sind, das Attribut `href` weiterhin speziell URL-maskiert werden muss. Dieses Versäumnis ist einer der häufigsten Fehler, da es leicht vergessen werden kann und nur schwer automatisiert zu erkennen ist.
 
-Zur Abhilfe maskiert die HTML-Vorlagensprache jede Variable automatisch gemäß dem Kontext, in dem sie platziert wird. Dies ist möglich, da HTL die Syntax von HTML versteht.
+Die HTML-Vorlagensprache maskiert automatisch jede Variable entsprechend dem Kontext, in dem sie platziert wird. Dieser Ansatz ist möglich, da HTL die Syntax von HTML versteht.
 
 Bei Annahme der folgenden `logic.js`-Datei:
 
@@ -211,7 +211,7 @@ use(function () {
 });
 ```
 
-Das anfängliche Beispiel hat die folgende Ausgabe zur Folge:
+Das erste Beispiel ergibt die folgende Ausgabe:
 
 ```xml
 <p>
@@ -227,20 +227,20 @@ Weitere Einzelheiten zur Steuerung des Escapings finden Sie im Abschnitt [Anzeig
 
 ### Automatisches Entfernen leerer Attribute {#automatic-removal-of-empty-attributes}
 
-Siehe folgendes Beispiel:
+Betrachten Sie das folgende Beispiel:
 
 ```xml
 <p class="${properties.class}">some text</p>
 ```
 
-Wenn der Wert der Eigenschaft `class` leer ist, entfernt die HTML-Vorlagensprache automatisch das gesamte `class`-Attribut aus der Ausgabe.
+Wenn der Wert der Eigenschaft `class` leer ist, entfernt die HTML-Vorlagensprache automatisch das gesamte Attribut `class` aus der Ausgabe.
 
-Wieder ist dies deswegen möglich, weil HTL die HTML-Syntax versteht und daher Attribute mit dynamischen Werten nur dann anzeigen kann, wenn ihr Wert nicht leer ist. Dies ist sehr praktisch, da es das Hinzufügen eines Bedingungsblocks um die Attribute herum vermeidet, was das Markup ungültig und unlesbar gemacht hätte.
+Auch dies ist möglich, da HTL die HTML-Syntax versteht und daher Attribute nur dann bedingt mit dynamischen Werten anzeigen kann, wenn ihr Wert nicht leer ist. Der Grund ist sehr praktisch, da es verhindert, dass Attribute mit einem Bedingungsblock versehen werden, wodurch das Markup ungültig und unlesbar geworden wäre.
 
 Außerdem ist der Typ der im Ausdruck enthaltenen Variablen von Bedeutung:
 
 * **Zeichenfolge:**
-   * **nicht leer:** Setzt die Zeichenfolge als Attributwert.
+   * **nicht leer:** Legt die Zeichenfolge als Attributwert fest.
    * **leer:** Entfernt das Attribut vollständig.
 
 * **Zahl:** Legt den Wert als Attributwert fest.
@@ -259,7 +259,7 @@ Zum Festlegen von Attributen ist die Anweisung `data-sly-attribute` möglicherwe
 
 ## Allgemeine Muster mit HTL {#common-patterns-with-htl}
 
-In diesem Abschnitt werden ein paar allgemeine Szenarien vorgestellt. Zudem wird aufgezeigt, wie diese mit der HTML-Vorlagensprache am besten gelöst werden können.
+In diesem Abschnitt werden einige gängige Szenarien vorgestellt. Es wird erläutert, wie diese Szenarien am besten mit der HTML-Vorlagensprache gelöst werden können.
 
 ### Laden von Client-Bibliotheken {#loading-client-libraries}
 
@@ -296,7 +296,7 @@ Es folgen zwei kurze Beispiele.
 </html>
 ```
 
-Wenn in diesem Beispiel die HTML-Elemente `head` und `body` in verschiedenen Dateien platziert sind, müsste die Vorlage `clientlib.html` in jede Datei geladen werden, die sie benötigt.
+Wenn sich die Elemente HTML `head` und `body` in separaten Dateien befinden, muss die Vorlage `clientlib.html` in jeder Datei geladen werden, für die dies erforderlich ist.
 
 Der Abschnitt über die Template- und Call-Anweisungen in der [HTL-Spezifikation](specification.md) enthält weitere Details darüber, wie das Deklarieren und Aufrufen solcher Templates funktioniert.
 
@@ -304,7 +304,7 @@ Der Abschnitt über die Template- und Call-Anweisungen in der [HTL-Spezifikation
 
 Die beste und eleganteste Art, Daten an den Client zu übermitteln, ist im Allgemeinen die Verwendung von `data`-Attributen, erst recht aber bei HTL.
 
-Das folgende Beispiel zeigt, wie die Logik (die auch in Java geschrieben werden könnte) verwendet werden kann, um das Objekt, das an den Client übergeben werden soll, bequem in JSON zu serialisieren, das dann einfach in ein `data`-Attribut eingefügt werden kann:
+Im folgenden Beispiel wird gezeigt, wie ein Objekt für die Übergabe an den Client an JSON (auch möglich in Java) serialisiert wird. Sie kann dann einfach in ein `data` -Attribut eingefügt werden:
 
 ```xml
 <!--/* template.html file: */-->
@@ -325,7 +325,7 @@ use(function () {
 });
 ```
 
-Von dort aus ist es einfach, sich vorzustellen, wie ein Client-seitiges JavaScript-Element auf dieses Attribut zugreifen und das JSON-Objekt erneut analysieren kann. Dies wäre z. B. das entsprechende JavaScript, das in eine Client-Bibliothek einzufügen wäre:
+Von dort aus ist es einfach, sich vorzustellen, wie ein Client-seitiges JavaScript-Element auf dieses Attribut zugreifen und das JSON-Objekt erneut analysieren kann. Bei diesem Ansatz handelt es sich um die entsprechende JavaScript, die in eine Client-Bibliothek platziert wird, z. B.:
 
 ```javascript
 var elements = document.querySelectorAll("[data-json]");
@@ -353,16 +353,16 @@ Ein spezieller Fall, in dem die im Abschnitt [Einschränkungen für Erhebungen s
 </div>
 ```
 
-Wie oben gezeigt, kann das Markup, das in das `script`-Element aufgenommen wird, HTL-Blockanweisungen enthalten, und die Ausdrücke müssen keine expliziten Kontexte angeben, da der Inhalt der Handlebars-Vorlage in einer eigenen Datei isoliert wurde. In diesem Beispiel wird zudem gezeigt, wie die Server-seitig ausgeführte HTL (wie im Element `h2`) mit einer Client-seitig ausgeführten Vorlagensprache, beispielsweise Handlebars (im Element `h3` gezeigt), kombiniert werden kann.
+Das Markup des Elements `script` kann HTL-Blockanweisungen ohne explizite Kontexte enthalten, da der Inhalt der Handlebars-Vorlage in der eigenen Datei isoliert wird. In diesem Beispiel wird außerdem gezeigt, wie die serverseitige HTL (wie beim Element `h2`) mit einer clientseitig ausgeführten Vorlagensprache wie Handlebars (im Element `h3` angezeigt) gemischt werden kann.
 
 Eine modernere Technik bestünde jedoch darin, stattdessen das HTML-Element `template` zu verwenden. Damit würde sich die Notwendigkeit erübrigen, die Inhalte der Vorlagen in separaten Dateien zu isolieren.
 
 ### Einschränkungen für Erhebungen spezieller Kontexte {#lifting-limitations-of-special-contexts}
 
-In den besonderen Fällen, in denen es erforderlich ist, die Beschränkungen des Skript-, Stil- und Kommentar-Kontextes zu umgehen, ist es möglich, deren Inhalt in einer separaten HTL-Datei zu isolieren. Alles in seiner eigenen Datei Befindliche wird durch HTL als normales HTML-Fragment interpretiert unter Nichtberücksichtigung des begrenzten Kontexts, in dem es möglicherweise enthalten war.
+In den besonderen Fällen, in denen es erforderlich ist, die Beschränkungen des Skript-, Stil- und Kommentar-Kontextes zu umgehen, ist es möglich, deren Inhalt in einer separaten HTL-Datei zu isolieren. HTL interpretiert alles in seiner eigenen HTML-Datei als standardmäßiges Fragment, wobei der eingeschränkte Kontext, von dem aus es enthalten war, ignoriert wird.
 
 Ein Beispiel finden Sie weiter unten im Abschnitt [Arbeiten mit Client-seitigen Vorlagen](#working-with-client-side-templates).
 
 >[!CAUTION]
 >
->Diese Technik kann zu Schwachstellen beim Cross-Site-Scripting (XSS) führen, und die Sicherheitsaspekte sollten sorgfältig geprüft werden, wenn diese Technik verwendet werden muss. Es gibt für gewöhnlich bessere Möglichkeiten für die Implementierung desselben Aspekts, als sich auf diese Praktik zu verlassen.
+>Diese Technik kann Sicherheitslücken beim Cross-Site-Scripting (XSS) verursachen. Die Sicherheitsaspekte sollten sorgfältig untersucht werden, wenn dieser Ansatz verwendet wird. Es gibt für gewöhnlich bessere Möglichkeiten für die Implementierung desselben Aspekts, als sich auf diese Praktik zu verlassen.
