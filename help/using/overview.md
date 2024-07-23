@@ -1,55 +1,55 @@
 ---
 title: HTL-Übersicht
-description: Erfahren Sie, wie AEM die HTML-Vorlagensprache (HTL) unterstützt, um ein produktives Web-Framework auf Unternehmensebene anzubieten, das die Sicherheit erhöht und Personen ohne Java-Kenntnisse, die HTML entwickeln, eine bessere Beteiligung an AEM-Projekten ermöglicht.
+description: Erfahren Sie, wie AEM HTL (HTML-Vorlagensprache) unterstützt, um ein produktives Webframework auf Unternehmensebene bereitzustellen, das die Sicherheit erhöht. Dieses Framework ermöglicht es HTML-Entwicklern ohne Java-Kenntnisse, besser an AEM Projekten teilzunehmen.
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
+source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
-source-wordcount: '707'
-ht-degree: 100%
+source-wordcount: '645'
+ht-degree: 26%
 
 ---
 
 
-# Übersicht {#overview}
+# Überblick {#overview}
 
-Die HTML-Vorlagensprache (HTL), die durch Adobe Experience Manager (AEM) unterstützt wird, bietet ein hoch produktives Webframework auf Unternehmensebene, das die Sicherheit erhöht und es HTML-Entwicklern ohne Java-Kenntnissen ermöglicht, besser an AEM-Projekten teilhaben zu können.
+HTML Template Language (HTL), unterstützt von Adobe Experience Manager (AEM), soll ein hoch produktives Webframework auf Unternehmensebene bereitstellen, das die Sicherheit erhöht. Es ermöglicht auch HTML-Entwicklern ohne Java-Kenntnisse, besser an AEM Projekten teilzunehmen.
 
-Die [in AEM 6.0 eingeführte](history.md) HTML Template Language ist das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in AEM. Die HTML-Vorlagensprache unterstützt Web-Entwickler, die zuverlässige Unternehmens-Websites erstellen müssen, dabei, die Sicherheit und die Entwicklungseffizienz zu erhöhen.
+[Als Einführung in AEM 6.0](history.md) ist die HTML-Vorlagensprache das bevorzugte und empfohlene serverseitige Vorlagensystem für das HTML in AEM. Die HTML-Vorlagensprache unterstützt Web-Entwickler, die zuverlässige Unternehmens-Websites erstellen müssen, dabei, die Sicherheit und die Entwicklungseffizienz zu erhöhen.
 
 ## Erhöhte Sicherheit {#increased-security}
 
-Die HTML Template Language erhöht die Sicherheit von Websites, die sie in ihrer Implementierung verwenden, im Vergleich zu den meisten anderen Template-Systemen, da HTL in der Lage ist, automatisch das richtige kontextbezogene Escaping auf alle Variablen anzuwenden, die an die Präsentationsebene ausgegeben werden. HTL ermöglicht dies, da sie die HTML-Syntax versteht, und verwendet dieses Wissen zum Anpassen des erforderlichen Escapings für Ausdrücke auf der Grundlage ihrer Position im Markup. Dies führt beispielsweise dazu, dass Ausdrücke, die in `href`- oder `src`-Attributen stehen, anders behandelt werden als Ausdrücke, die in anderen Attributen oder anderswo stehen.
+HTML Template Language (HTL) verbessert die Site-Sicherheit, indem auf alle Ausgabevariablen automatisch eine kontextsensitive Maskierung angewendet wird, wodurch diese sicherer ist als die meisten anderen Vorlagensysteme. HTL ermöglicht diesen Ansatz, da sie die HTML-Syntax versteht und diese Kenntnisse verwendet, um die erforderliche Maskierung für Ausdrücke basierend auf ihrer Position im Markup anzupassen. Diese Methode kann dazu führen, dass in den Attributen `href` oder `src` platzierte Ausdrücke anders maskiert werden als Ausdrücke, die in anderen Attributen oder an anderer Stelle platziert werden.
 
-Das gleiche Ergebnis kann mit Vorlagensprachen wie JSP erreicht werden, aber in diesem Fall muss die Entwicklerin oder der Entwickler manuell sicherstellen, dass jede Variable mit der richtigen Maskierung versehen ist. Da eine einzige Auslassung oder ein einziger Fehler beim Maskieren ausreichen kann, um eine Cross-Site-Scripting-Schwachstelle (XSS) zu verursachen, haben wir uns entschieden, diese Aufgabe mit HTL zu automatisieren. Bei Bedarf können Entwicklerinnen und Entwickler immer noch ein anderes Maskieren für Ausdrücke definieren, aber mit HTL entspricht das Standardverhalten viel eher dem gewünschten Verhalten, was die Wahrscheinlichkeit von Fehlern verringert.
+Das gleiche Ergebnis kann mit Vorlagensprachen wie JSP erreicht werden, aber in diesem Fall muss die Entwicklerin oder der Entwickler manuell sicherstellen, dass jede Variable mit der richtigen Maskierung versehen ist. Da eine einzelne Unterlassung oder ein Fehler in der angewendeten Maskierung potenziell ausreicht, um eine Sicherheitslücke beim Cross-Site-Scripting (XSS) zu verursachen, entschied sich Adobe, diese Aufgabe mit HTL zu automatisieren. Bei Bedarf können Entwicklerinnen und Entwickler immer noch ein anderes Maskieren für Ausdrücke definieren, aber mit HTL entspricht das Standardverhalten viel eher dem gewünschten Verhalten, was die Wahrscheinlichkeit von Fehlern verringert.
 
 ## Vereinfachte Entwicklung {#simplified-development}
 
-Die HTML-Vorlagensprache ist einfach zu erlernen und ihre Funktionen sind absichtlich begrenzt, um sicherzustellen, dass sie einfach und unkompliziert bleibt. Sie verfügt über leistungsstarke Mechanismen für das Strukturieren von Markup und das Aufrufen der Logik. Zugleich erzwingt sie immer die strenge Trennung von Belangen zwischen Markup und Logik. HTL selbst ist Standard-HTML5, da es Ausdrücke und Datenattribute verwendet, um das Markup mit dem gewünschten dynamischen Verhalten zu versehen, was bedeutet, dass es die Gültigkeit des Markups nicht beeinträchtigt und es lesbar bleibt. Beachten Sie, dass die Auswertung der Ausdrücke und Datenattribute vollständig Server-seitig erfolgt und auf der Client-Seite nicht sichtbar ist, wo jedes gewünschte JavaScript-Framework ohne Störung verwendet werden kann. 
+Die HTML-Vorlagensprache ist einfach zu erlernen und ihre Funktionen sind absichtlich begrenzt, um sicherzustellen, dass sie einfach und unkompliziert bleibt. Sie verfügt über leistungsstarke Mechanismen für das Strukturieren von Markup und das Aufrufen der Logik. Zugleich erzwingt sie immer die strenge Trennung von Belangen zwischen Markup und Logik. HTL ist eine standardmäßige HTML5, die Ausdrücke und Datenattribute verwendet, um das Markup mit dynamischem Verhalten zu kommentieren. Dieser Ansatz behält die Gültigkeit und Lesbarkeit des Markups bei. Die Auswertung der Ausdrücke und Datenattribute erfolgt vollständig Server-seitig und ist auf Client-Seite nicht sichtbar, wo jedes gewünschte JavaScript-Framework ohne Störung verwendet werden kann.
 
-Diese Funktionen ermöglichen es HTML-Entwicklerinnen und -Entwicklern ohne Java-Kenntnisse und mit wenig produktspezifischem Wissen, HTL-Vorlagen zu bearbeiten, sodass sie Teil des Entwicklungsteams werden können und die Zusammenarbeit mit den Java-Entwicklerinnen und -Entwicklern vereinfacht wird. Umgekehrt können sich Java-Entwicklerinnen und -Entwicklern auf den Back-End-Code konzentrieren, ohne sich um HTML kümmern zu müssen
+Diese Funktionen ermöglichen es HTML-Entwicklern ohne Java-Kenntnisse, HTL-Vorlagen zu bearbeiten, sich in das Entwicklungsteam zu integrieren und die Zusammenarbeit mit Java-Entwicklern zu optimieren, die den ganzen Stapel gemeinsam nutzen. Umgekehrt können sich Java-Entwickler auf den Backend-Code konzentrieren, ohne sich um HTML zu sorgen.
 
 ## Reduzierte Kosten {#reduced-costs}
 
-Erhöhte Sicherheit, vereinfachte Entwicklung und verbesserte Team-Zusammenarbeit führen bei AEM-Projekten zu geringerem Aufwand, schnellerer Markteinführung (TTM) und niedrigeren Gesamtbetriebskosten (TCO).
+Erhöhte Sicherheit, vereinfachte Entwicklung und verbesserte Teamzusammenarbeit, bedeutet für AEM Projekte weniger Aufwand, schnellere Markteinführungszeiten (TTM) und niedrigere Gesamtbetriebskosten (TCO).
 
-Konkret wurde bei der Neuimplementierung der Website Adobe.com mit der HTML-Vorlagensprache beobachtet, dass Kosten und Dauer des Projekts um etwa 25 % reduziert werden konnten.
+Die erneute Implementierung der Adobe.com Site mit HTML Template Language hat gezeigt, dass Projektkosten und -dauer auf ca. 25 % reduziert werden.
 
 ![Effizienzsteigerung und Kostensenkung](assets/chlimage_1.png)
 
-Das obige Diagramm zeigt die folgenden, potenziell durch HTL ermöglichten Verbesserungen hinsichtlich der Effizienz:
+Das obige Diagramm zeigt die folgenden, potenziell durch HTL ermöglichten Effizienzverbesserungen:
 
-* **HTML/CSS/JS:** Da die HTML-Entwicklerinnen und -Entwickler die HTL-Vorlagen direkt bearbeiten können, ist es nicht mehr notwendig, die Front-End-Designs getrennt vom AEM-Projekt zu implementieren, sondern sie können direkt in die eigentlichen AEM-Komponenten implementiert werden. Dies reduziert schmerzhafte Iterationen mit den Full-Stack-Java-Entwicklerinnen und -Entwicklern.
-* **JSP/HTL:** Da HTL selbst keine Java-Kenntnisse erfordert und einfach zu schreiben ist, ist jede Entwicklerin oder jeder Entwickler mit HTML-Kenntnissen in der Lage, die Vorlagen zu bearbeiten.
+* **HTML / CSS / JS:** HTML-Entwickler können HTL-Vorlagen direkt bearbeiten, sodass Frontend-Designs direkt auf AEM Komponenten implementiert werden können, sodass keine separate Implementierung erforderlich ist. Dieser Ansatz reduziert schmerzhafte Iterationen mit den Java-Entwicklern im Vollstapel.
+* **JSP/HTL:** Da HTL selbst kein Java-Wissen erfordert und zum Schreiben unkompliziert ist, ist jeder Entwickler mit HTML-Expertise berechtigt, die Vorlagen zu bearbeiten.
 * **Java:** Dank der klaren und einfach zu verwendenden Use-API von HTL wird die Schnittstelle zur Geschäftslogik klarer, was auch der Java-Entwicklung insgesamt zugutekommt.
 
 ## Einführungsvideo {#video}
 
-Das folgende Video aus einer [AEM Gems-Sitzung](https://experienceleague.adobe.com/docs/experience-manager-gems-events/gems/gems2014/aem-introduction-to-htl.html?lang=de) gibt einen Überblick über den Zweck von HTL sowie Implementierungsbeispiele.
+Das folgende Video aus einer [AEM Gems-Sitzung](https://experienceleague.adobe.com/en/docs/events/experience-manager-gems-recordings/gems2014/aem-introduction-to-htl) bietet einen Überblick über den Zweck von HTL sowie Implementierungsbeispiele.
 
 >[!VIDEO](https://video.tv.adobe.com/v/19504/?quality=9)
 
-Bitte beachten Sie, dass sich das Video auf HTL unter [seinem früheren Namen, Sightly](history.md), bezieht.
+Beachten Sie, dass das Video durch [seinen früheren Namen Sightly](history.md) auf HTL verweist.
 
 ## Nächste Schritte {#next-steps}
 
-Nachdem Sie nun die Ziele und Vorteile von HTL kennen, können Sie sich mit der Sprache vertraut machen, indem Sie das Dokument [Erste Schritte mit der HTML-Vorlagensprache](getting-started.md) lesen.
+Nachdem Sie die Ziele und Vorteile von HTL kennen, können Sie mit der Sprache beginnen. Siehe [Erste Schritte mit der HTML-Vorlagensprache](getting-started.md).

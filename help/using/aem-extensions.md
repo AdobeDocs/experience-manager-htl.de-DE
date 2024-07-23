@@ -2,16 +2,16 @@
 title: AEM-Erweiterungen
 description: AEM bietet Erweiterungen der HTL-Spezifikation, die Sie als Entwickler AEM können.
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
-source-git-commit: ebeac25c38b81c92011c163c7860688f43547a7d
+source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
 source-wordcount: '228'
-ht-degree: 64%
+ht-degree: 41%
 
 ---
 
 # AEM-Erweiterungen {#aem-extensions}
 
-Ähnlich wie die [Apache Sling-Erweiterungen der HTL-Spezifikation](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#extensions-of-the-htl-specification-1) bietet AEM einige zusätzliche Ausdrucksoptionen, die die Arbeit mit AEM-Konzepten direkt in den HTL-Skripten etwas erleichtern.
+Ähnlich wie bei den [Apache Sling-Erweiterungen der HTL-Spezifikation](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#extensions-of-the-htl-specification-1) bietet AEM einige zusätzliche Ausdrucksoptionen, die die Arbeit mit AEM Konzepten direkt in den HTL-Skripten etwas vereinfachen.
 
 ## i18n {#i18n}
 
@@ -29,7 +29,7 @@ In AEM kann `data-sly-include` eine zusätzliche Option `wcmmode` annehmen, die 
 
 ## `data-sly-resource` {#data-sly-resource}
 
-Zusätzlich zu Pfaden und `Resources` kann das `data-sly-resource`-Blockelement auch mit [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) oder [`Records` arbeiten.](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) Bei beiden Ansätzen muss die Eigenschaft von `resourceName` als Zeichenfolge angegeben werden. Der Wert wird verwendet, um eine [Synthetische Ressource](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html) zu erstellen, die im Rendering-Kontext enthalten ist. Die übrigen Eigenschaften der `Record` oder der `Map`, die an `data-sly-resource` übergeben werden, werden als normale `Resource`-Eigenschaften verwendet. Wenn die Eigenschaft `sling:resourceType` in dieser Zuordnung fehlt, wird davon ausgegangen, dass der Ressourcentyp entweder der Wert der Ausdrucksoption `resourceType` [3} oder der Ressourcentyp der aktuellen Ressource ist, die das Rendering auslöst.](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource)
+Zusätzlich zu Pfaden und `Resources` kann das Blockelement `data-sly-resource` auch mit [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) oder [`Records`](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) funktionieren. Bei beiden Ansätzen muss die Eigenschaft `resourceName` String angegeben werden. Der Wert wird verwendet, um eine [Synthetische Ressource](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html) zu erstellen, die im Rendering-Kontext enthalten ist. Die übrigen Eigenschaften der `Record` oder der `Map`, die an `data-sly-resource` übergeben werden, werden als normale `Resource`-Eigenschaften verwendet. Wenn die Eigenschaft `sling:resourceType` in dieser Zuordnung fehlt, wird davon ausgegangen, dass der Ressourcentyp entweder der Wert der Ausdrucksoption `resourceType` [3} oder der Ressourcentyp der aktuellen Ressource ist, die das Rendering auslöst.](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource)
 
 Unter Berücksichtigung der folgenden Zuordnungs-/Datensatz-Eigenschaften, die im Skriptbereich als `map` verfügbar sind:
 

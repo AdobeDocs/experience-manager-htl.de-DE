@@ -2,17 +2,17 @@
 title: Globale HTL-Objekte
 description: Erfahren Sie mehr über aufzählbare Objekte, Java-gestützte Objekte und JavaScript-gestützte Objekte in HTL.
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
-source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
+source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
-source-wordcount: '166'
-ht-degree: 100%
+source-wordcount: '164'
+ht-degree: 87%
 
 ---
 
 
 # Globale HTL-Objekte {#htl-global-objects}
 
-Ohne etwas spezifizieren zu müssen, bietet HTL Zugang zu vielen Objekten, die für Entwickelnde nützlich sind. Diese Objekte kommen zu denen hinzu, die über die [Anwendungs-API](java-use-api.md) eingeführt werden können.
+Ohne etwas spezifizieren zu müssen, bietet HTL Zugang zu vielen Objekten, die für Entwickelnde nützlich sind. Diese Objekte sind zusätzlich zu denen vorhanden, die möglicherweise über die [Anwendungs-API](java-use-api.md) eingeführt werden.
 
 >[!NOTE]
 >
@@ -30,7 +30,7 @@ Diese Objekte bieten praktischen Zugriff auf häufig verwendete Informationen. A
 
 ## Java-unterstützte Objekte {#java-backed-objects}
 
-Jedes der folgenden Objekte wird durch das entsprechende Java-Objekt unterstützt.
+Das entsprechende Java-Objekt sichert jedes der folgenden Objekte.
 
 | Variablenname | Beschreibung |
 |---|---|
