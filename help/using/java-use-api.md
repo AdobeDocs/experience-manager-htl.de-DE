@@ -3,9 +3,9 @@ title: HTL-Java-Anwendungs-API
 description: Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmethoden in einer benutzerdefinierten Java-Klasse.
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: 5e1dce693dc61300530837c996f45d793c0b07e6
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1135'
-ht-degree: 80%
+ht-degree: 100%
 
 ---
 
@@ -16,7 +16,7 @@ Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmet
 
 ## Nutzungsszenario {#use-case}
 
-Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmethoden in einer benutzerdefinierten Java-Klasse über `data-sly-use`. Diese Methode ermöglicht die Einkapselung aller komplexen Geschäftslogik im Java-Code, während der HTL-Code nur die direkte Markup-Produktion behandelt.
+Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmethoden in einer benutzerdefinierten Java-Klasse über `data-sly-use`. Durch diese Methode kann die gesamte komplexe Geschäftslogik im Java-Code verschachtelt werden, während der HTL-Code nur die direkte Markup-Produktion verarbeiten muss.
 
 Ein Java-Anwendungs-API-Objekt kann ein einfacher POJO sein, der von einer bestimmten Implementierung über den Standardkonstruktor von POJO instanziiert wird.
 
@@ -31,7 +31,7 @@ Die Anwendungs-API-POJOs können auch eine öffentliche Methode namens init mit 
     public void init(javax.script.Bindings bindings);
 ```
 
-Die `bindings`-Zuordnung kann Objekte enthalten, die dem derzeit ausgeführten HTL-Skript, das vom Anwendungs-API-Objekt für die Verarbeitung verwendet werden kann, Kontext bieten.
+Die `bindings`-Karte kann Objekte enthalten, die dem derzeit ausgeführten HTL-Skript einen Kontext geben, den das Anwendungs-API-Objekt für seine Verarbeitung nutzen kann.
 
 ## Ein einfaches Beispiel {#a-simple-example}
 
@@ -39,7 +39,7 @@ Dieses Beispiel veranschaulicht die Verwendung der Anwendungs-API.
 
 >[!NOTE]
 >
->Dieses Beispiel ist vereinfacht, um nur seine Verwendung zu veranschaulichen. In einer Produktionsumgebung empfiehlt Adobe die Verwendung von [Sling-Modellen](https://sling.apache.org/documentation/bundles/models.html).
+>Dieses Beispiel ist vereinfacht, um nur seine Verwendung zu veranschaulichen. Adobe empfiehlt, in einer Produktionsumgebung [Sling-Modelle](https://sling.apache.org/documentation/bundles/models.html) zu verwenden.
 
 Starten Sie mit einer HTL-Komponente namens `info,`, die keine Anwendungsklasse hat. Sie besteht aus einer einzelnen Datei namens `/apps/my-example/components/info.html`
 
@@ -50,7 +50,7 @@ Starten Sie mit einer HTL-Komponente namens `info,`, die keine Anwendungsklasse 
 </div>
 ```
 
-Fügen Sie Inhalte für diese Komponente hinzu, die bei `/content/my-example/` gerendert werden sollen:
+Fügen Sie etwas Inhalt für diese unter `/content/my-example/` zu rendernde Komponente hinzu:
 
 ```xml
 {
@@ -60,7 +60,7 @@ Fügen Sie Inhalte für diese Komponente hinzu, die bei `/content/my-example/` g
 }
 ```
 
-Wenn auf diesen Inhalt zugegriffen wird, wird die HTL-Datei ausgeführt. Innerhalb des HTL-Codes wird das Kontextobjekt `properties` verwendet, um auf `title` und `description` der aktuellen Ressource zuzugreifen und sie anzuzeigen. Die Ausgabedatei `/content/my-example.html` lautet:
+Wenn auf diesen Inhalt zugegriffen wird, wird die HTL-Datei ausgeführt. Innerhalb des HTL-Codes wird das Kontextobjekt `properties` verwendet, um auf `title` und `description` der aktuellen Ressource zuzugreifen und sie anzuzeigen. Die Ausgabedatei `/content/my-example.html` ist Folgende:
 
 ```html
 <div>
@@ -77,7 +77,7 @@ Die Komponente `info` benötigt in ihrer gegebenen Form keine Anwendungsklasse, 
 >
 >Eine Anwendungsklasse sollte nur verwendet werden, wenn eine Aktion nicht allein in HTL ausgeführt werden kann.
 
-Angenommen, Sie möchten, dass die Komponente `info` die Eigenschaften `title` und `description` der Ressource anzeigt, jedoch komplett in Kleinschreibung. Da HTL über keine Methode zur Zeichenfolgenkleinschreibung verfügt, können Sie eine Java-Anwendungsklasse hinzufügen und `/apps/my-example/component/info/info.html` wie folgt ändern:
+Angenommen, Sie möchten, dass die Komponente `info` die Eigenschaften `title` und `description` der Ressource anzeigt, jedoch komplett in Kleinschreibung. Da HTL über keine Methode zur Umwandlung von Zeichenfolgen in Kleinschreibung verfügt, können Sie eine Java-Anwendungsklasse hinzufügen und `/apps/my-example/component/info/info.html` wie folgt ändern:
 
 ```xml
 <div data-sly-use.info="Info">
@@ -115,7 +115,7 @@ public class Info extends WCMUsePojo {
 
 Weitere Einzelheiten finden Sie in den [Javadocs für `com.adobe.cq.sightly.WCMUsePojo`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html).
 
-Sehen wir uns nun die verschiedenen Teile des Codes an.
+Lassen Sie uns nun einen Blick auf die verschiedenen Teile des Codes werfen.
 
 ### Lokale vs. Bundle-Java-Klasse {#local-vs-bundle-java-class}
 
@@ -194,7 +194,7 @@ public class Info extends WCMUsePojo {
 
 Die Methode [aktivieren](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) wird für gewöhnlich verwendet, um anhand des aktuellen Kontexts (beispielsweise der aktuellen Anforderung und Ressource) die in Ihrem HTL-Code erforderlichen Werte vorab zu berechnen und zu speichern (in Nutzervariablen).
 
-Die Klasse `WCMUsePojo` bietet Zugriff auf denselben Satz von Kontextobjekten, die in einer HTL-Datei verfügbar sind (siehe Dokument [Globale Objekte](global-objects.md)).
+Die Klasse `WCMUsePojo` ermöglicht den Zugriff auf dieselbe Reihe von Kontextobjekten, die in einer HTL-Datei verfügbar sind (siehe das Dokument [Globale Objekte](global-objects.md).)
 
 In einer Klasse, die `WCMUsePojo` erweitert, können Sie mithilfe ihrer Namen auf Kontextobjekte zugreifen:
 
@@ -249,7 +249,7 @@ public class Info extends WCMUsePojo {
 
 ### Attribut `data-sly-use` {#data-sly-use-attribute}
 
-Das Attribut `data-sly-use` wird verwendet, um die Anwendungsklasse innerhalb Ihres HTL-Codes zu initialisieren. Im Beispiel deklariert das Attribut `data-sly-use` , dass die Klasse `Info` verwendet wird. Sie können nur den lokalen Namen der Klasse verwenden, da Sie eine lokale Installation verwenden (nachdem Sie die Java-Quelldatei im selben Ordner wie die HTL-Datei platziert haben). Wenn Sie eine Bundle-Installation verwenden würden, müssten Sie den voll qualifizierten Klassennamen angeben.
+Das Attribut `data-sly-use` wird verwendet, um die Anwendungsklasse innerhalb Ihres HTL-Codes zu initialisieren. In diesem Beispiel gibt das Attribut `data-sly-use` an, dass die Klasse `Info` verwendet wird. Sie können nur den lokalen Namen der Klasse verwenden, da Sie eine lokale Installation verwenden (wobei die Java-Quelldatei im selben Ordner wie die HTL-Datei platziert wurde). Wenn Sie eine Bundle-Installation verwenden würden, müssten Sie den voll qualifizierten Klassennamen angeben.
 
 Beachten Sie die Verwendung in diesem Beispiel für `/apps/my-example/component/info/info.html`.
 
@@ -299,7 +299,7 @@ Wenn nun auf `/content/my-example.html` zugegriffen wird, wird die folgende Date
 
 >[!NOTE]
 >
->Dieses Beispiel wurde vereinfacht, nur um seine Verwendung zu veranschaulichen. In einer Produktionsumgebung empfiehlt Adobe die Verwendung von [Sling-Modellen](https://sling.apache.org/documentation/bundles/models.html).
+>Dieses Beispiel wurde vereinfacht, um nur seine Verwendung zu veranschaulichen. Adobe empfiehlt, in einer Produktionsumgebung [Sling-Modelle](https://sling.apache.org/documentation/bundles/models.html) zu verwenden.
 
 ## Mehr als nur die Grundlagen {#beyond-the-basics}
 
@@ -312,7 +312,7 @@ In diesem Abschnitt werden einige zusätzliche Funktionen vorgestellt, die über
 
 Parameter können bei der Initialisierung an eine Anwendungsklasse weitergegeben werden.
 
-Weitere Informationen finden Sie in der Dokumentation zur Sling [HTL Scripting Engine](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects).
+Weitere Informationen finden Sie in der [Dokumentation zu HTL Scripting Engine](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects) von Sling.
 
 ### Gebündelte Java-Klasse {#bundled-java-class}
 
