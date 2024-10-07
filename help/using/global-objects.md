@@ -1,11 +1,11 @@
 ---
 title: Globale HTL-Objekte
-description: Erfahren Sie mehr über aufzählbare Objekte, Java-gestützte Objekte und JavaScript-gestützte Objekte in HTL.
+description: Erfahren Sie mehr über Aufzählungsobjekte und Java-unterstützte Objekte in HTL.
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
-source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: ht
-source-wordcount: '164'
-ht-degree: 100%
+source-git-commit: b585f03d600319414b92a95f98cf9293d91538b6
+workflow-type: tm+mt
+source-wordcount: '205'
+ht-degree: 74%
 
 ---
 
@@ -63,3 +63,9 @@ Das entsprechende Java-Objekt sichert jedes der folgenden Objekte.
 ## JavaScript-unterstützte Objekte {#javascript-backed-objects}
 
 Es ist möglich, die HTL-Logik mit JavaScript zu unterstützen. Die bevorzugte oder empfohlene Methode ist jedoch die Verwendung von [Sling-Modellen](https://sling.apache.org/documentation/bundles/models.html).
+
+>[!NOTE]
+>
+>[Die JavaScript-Anwendungs-API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) wurde für die Verwendung mit AEM as a Cloud Service eingestellt. Verwenden Sie stattdessen [die Java Use API.](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/java-use-ap)
+>
+>[Weitere Informationen zu veralteten und entfernten Funktionen finden Sie in den AEM as a Cloud Service-Versionshinweisen](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features) .
