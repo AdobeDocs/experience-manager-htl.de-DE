@@ -7,7 +7,7 @@ ht-degree: 85%
 ---
 # Adobe Experience Manager HTL-Dokumentation
 
-Die Dokumentation zum Repository für Adobe Experience Manager HTML Templating Language (HTL).
+Das Repository für die Dokumentation zur Adobe Experience Manager-HTML-Vorlagensprache (HTL).
 
 Ihre Beiträge zur Dokumentation sind willkommen. Sehen Sie sich die folgenden Ressourcen an:
 

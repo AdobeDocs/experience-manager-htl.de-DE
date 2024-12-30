@@ -3,9 +3,9 @@ title: AEM-Erweiterungen
 description: AEM bietet Erweiterungen der HTL-Spezifikation für AEM an, um Ihnen als Entwicklerin oder Entwickler die Arbeit zu erleichtern.
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
 source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: ht
-source-wordcount: '228'
-ht-degree: 100%
+workflow-type: tm+mt
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
 

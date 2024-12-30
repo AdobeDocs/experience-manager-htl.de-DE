@@ -15,15 +15,15 @@ ht-degree: 40%
 
 # Metadaten für die interne Verwendung
 
-Das GitHub-Authoring-System definiert Metadaten hierarchisch, wobei die Präzedenzebenen, wie im Folgenden dargestellt, zunehmen:
+Das GitHub-Authoring-System definiert Metadaten hierarchisch mit zunehmenden Präzedenzfällen, wie im Folgenden dargestellt:
 
 1. metadata.md
 1. IHV
 1. Artikel
 
-Die in der Datei &quot;metadata.md&quot;definierten Metadaten gelten für das gesamte Repository, können jedoch auf den Ebenen &quot;ToC&quot;und &quot;article&quot;überschrieben werden. Das Überschreiben der Metadaten sollte auf der niedrigstmöglichen Ebene erfolgen.
+Die in der Datei „metadata.md“ definierten Metadaten gelten für das gesamte Repository, können jedoch auf Inhaltsverzeichnis- und Artikelebene überschrieben werden. Das Überschreiben der Metadaten sollte auf der niedrigstmöglichen Ebene erfolgen.
 
-Die Metadaten im `experience-manager-core-components.en` -Repository sind das erforderliche Minimum.
+Die Metadaten im `experience-manager-core-components.en`-Repository sind das erforderliche Minimum.
 
 metadata.md
 

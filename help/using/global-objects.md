@@ -3,7 +3,7 @@ title: Globale HTL-Objekte
 description: Erfahren Sie mehr über aufzählbare Objekte und Java-unterstützte Objekte in HTL.
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: b585f03d600319414b92a95f98cf9293d91538b6
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '205'
 ht-degree: 100%
 

@@ -7,7 +7,7 @@ ht-degree: 96%
 ---
 # Beiträge zur Adobe Experience Manager-Dokumentation
 
-Vielen Dank, dass Sie sich entschieden haben, zur Adobe Experience Manager Cloud Service-Dokumentation beizutragen! Adobe begrüßt Inhaltsbeiträge der gesamten Leser-Community sowie anderer Adobe-Mitarbeiter.
+Vielen Dank, dass Sie sich entschieden haben, zur Adobe Experience Manager Cloud Service-Dokumentation beizutragen! Adobe begrüßt Inhaltsbeiträge von der gesamten Lesergemeinschaft sowie von anderen Adobe-Mitarbeitern.
 
 In dieser Datei wird beschrieben, wie Sie Beiträge beisteuern können und welche Richtlinien zu befolgen sind, wenn Sie Ihre Beiträge vornehmen.
 

@@ -3,7 +3,7 @@ title: Entwickler-Tools
 description: Sehen Sie sich diese Tools an, die Ihnen bei der Entwicklung in HTL helfen.
 exl-id: c5683ee4-a052-4a6f-8ad1-e18a4201414e
 source-git-commit: ebeac25c38b81c92011c163c7860688f43547a7d
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '78'
 ht-degree: 100%
 
