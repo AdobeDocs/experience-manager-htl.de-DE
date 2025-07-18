@@ -2,10 +2,10 @@
 title: Erste Schritte mit HTL
 description: Lernen Sie HTL kennen, das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in AEM, und verstehen Sie die wichtigsten Konzepte der Sprache und ihre grundlegenden Konstrukte.
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
+source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
 workflow-type: tm+mt
-source-wordcount: '2050'
-ht-degree: 100%
+source-wordcount: '2045'
+ht-degree: 97%
 
 ---
 
@@ -18,15 +18,15 @@ Dieses Dokument gibt einen Überblick über den Zweck der HTL sowie eine Einfüh
 
 >[!TIP]
 >
->Dieses Dokument stellt den Zweck der HTL und einen Überblick über ihre grundlegende Struktur und Konzepte vor. Wenn Sie Fragen zur spezifischen Syntax haben, sehen Sie bitte in der [HTL-Spezifikation](specification.md) nach.
+>Dieses Dokument stellt den Zweck der HTL und einen Überblick über ihre grundlegende Struktur und Konzepte vor. Wenn Sie Fragen zur spezifischen Syntax haben, lesen Sie die [HTL-Spezifikation](specification.md).
 
 ## HTL-Ebenen {#layers}
 
 In AEM wird eine HTL durch mehrere Ebenen definiert.
 
 1. **[HTL-Spezifikation](specification.md)** – HTL ist eine quelloffene, plattformunabhängige Spezifikation, die von jeder Person frei implementiert werden kann.
-1. **[Sling HTL Scripting Engine](specification.md)** – Das Sling-Projekt hat die Referenzimplementierung von HTL erstellt, die von AEM verwendet wird.
-1. **[AEM-Erweiterungen](specification.md)** – AEM baut auf der Sling HTL Scripting Engine auf, um Entwickelnden praktische, AEM-spezifische Funktionen zu bieten.
+1. **[`Sling`HTL Scripting Engine](specification.md)** - Das `Sling`-Projekt hat die Referenzimplementierung von HTL erstellt, die von AEM verwendet wird.
+1. **[AEM-Erweiterungen](specification.md)** - AEM baut auf der `Sling` HTL Scripting Engine auf, um Entwickelnden praktische, AEM-spezifische Funktionen zu bieten.
 
 Diese HTL-Dokumentation konzentriert sich auf die Verwendung von HTL zur Entwicklung von AEM-Lösungen. Als solche berührt sie alle drei Ebenen und verknüpft bei Bedarf externe Ressourcen.
 

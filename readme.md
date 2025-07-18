@@ -1,13 +1,13 @@
 ---
-source-git-commit: 22f62868df0fcfc558e5d62434dde843a9f3ca83
+source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
 workflow-type: tm+mt
-source-wordcount: '74'
-ht-degree: 85%
+source-wordcount: '73'
+ht-degree: 84%
 
 ---
 # Adobe Experience Manager HTL-Dokumentation
 
-Das Repository für die Dokumentation zur Adobe Experience Manager-HTML-Vorlagensprache (HTL).
+Das Repository für die Dokumentation zur Adobe Experience Manager HTML Templating Language (HTL) .
 
 Ihre Beiträge zur Dokumentation sind willkommen. Sehen Sie sich die folgenden Ressourcen an:
 

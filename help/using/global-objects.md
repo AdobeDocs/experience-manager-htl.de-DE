@@ -2,10 +2,10 @@
 title: Globale HTL-Objekte
 description: Erfahren Sie mehr über aufzählbare Objekte und Java-unterstützte Objekte in HTL.
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
-source-git-commit: b585f03d600319414b92a95f98cf9293d91538b6
+source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
 workflow-type: tm+mt
-source-wordcount: '205'
-ht-degree: 100%
+source-wordcount: '203'
+ht-degree: 81%
 
 ---
 
@@ -66,6 +66,6 @@ Es ist möglich, die HTL-Logik mit JavaScript zu unterstützen. Die bevorzugte o
 
 >[!NOTE]
 >
->[Die JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) wurde für die Verwendung mit AEM as a Cloud Service abgeschafft. Verwenden Sie [stattdessen die Java Use API](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/java-use-api).
+>[Die JavaScript-Anwendungs](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api)API wird jetzt für die Verwendung mit AEM as a Cloud Service nicht mehr unterstützt. Verwenden Sie stattdessen [die Java-Anwendungs-API](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/java-use-api).
 >
->Weitere Informationen zu veralteten und entfernten Funktionen finden Sie in den [Versionshinweisen zu AEM as a Cloud Service](https://experienceleague.adobe.com/de/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features).
+>Weitere Informationen zu veralteten und entfernten Funktionen finden Sie in den [AEM as a Cloud Service-Versionshinweisen](https://experienceleague.adobe.com/de/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features).

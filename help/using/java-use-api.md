@@ -2,10 +2,10 @@
 title: HTL-Java-Anwendungs-API
 description: Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmethoden in einer benutzerdefinierten Java-Klasse.
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
-source-git-commit: 5e1dce693dc61300530837c996f45d793c0b07e6
+source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
 workflow-type: tm+mt
-source-wordcount: '0'
-ht-degree: 0%
+source-wordcount: '1132'
+ht-degree: 99%
 
 ---
 
@@ -312,7 +312,7 @@ In diesem Abschnitt werden einige zusätzliche Funktionen vorgestellt, die über
 
 Parameter können bei der Initialisierung an eine Anwendungsklasse weitergegeben werden.
 
-Weitere Informationen finden Sie in der [Dokumentation zu HTL Scripting Engine](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects) von Sling.
+Weitere Informationen finden Sie in der `Sling` [HTL Scripting Engine-Dokumentation](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects).
 
 ### Gebündelte Java-Klasse {#bundled-java-class}
 
