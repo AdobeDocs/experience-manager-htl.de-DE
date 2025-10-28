@@ -20,7 +20,7 @@ ht-degree: 99%
 
 HTML Template Language (HTL), unterstützt von Adobe Experience Manager (AEM), hat das Ziel, ein hochproduktives Webframework auf Unternehmensebene bereitzustellen, das die Sicherheit erhöht. Es ermöglicht auch HTML-Entwickelnden ohne Java-Kenntnisse, besser an AEM-Projekten teilhaben zu können.
 
-Die [in AEM 6.0 eingeführte](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/history) HTML Template Language ist das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in AEM. Die HTML-Vorlagensprache unterstützt Web-Entwickler, die zuverlässige Unternehmens-Websites erstellen müssen, dabei, die Sicherheit und die Entwicklungseffizienz zu erhöhen.
+Die [in AEM 6.0 eingeführte](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/history) HTML Template Language ist das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in AEM. Die HTML-Vorlagensprache unterstützt Web-Entwickler, die zuverlässige Unternehmens-Websites erstellen müssen, dabei, die Sicherheit und die Entwicklungseffizienz zu erhöhen.
 
 <!--
 history.md
@@ -58,7 +58,7 @@ Das folgende Video aus einer [AEM Gems-Sitzung](https://experienceleague.adobe.c
 
 >[!VIDEO](https://video.tv.adobe.com/v/19504/?quality=9)
 
-Bitte beachten Sie, dass sich das Video auf HTL unter [seinem früheren Namen, Sightly](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/history), bezieht.
+Bitte beachten Sie, dass sich das Video auf HTL unter [seinem früheren Namen, Sightly](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/history), bezieht.
 
 <!--
 history.md
@@ -66,7 +66,7 @@ history.md
 
 ## Nächste Schritte {#next-steps}
 
-Nachdem Sie nun die Ziele und Vorteile von HTL kennen, können Sie sich mit der Sprache vertraut machen. Siehe [Erste Schritte mit der HTML Template Language](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/getting-started).
+Nachdem Sie nun die Ziele und Vorteile von HTL kennen, können Sie sich mit der Sprache vertraut machen. Siehe [Erste Schritte mit der HTML Template Language](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/getting-started).
 
 <!--
 getting-started.md

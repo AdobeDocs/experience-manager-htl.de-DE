@@ -24,7 +24,7 @@ Dieses Dokument gibt einen Überblick über den Zweck der HTL sowie eine Einfüh
 
 >[!TIP]
 >
->Dieses Dokument stellt den Zweck der HTL und einen Überblick über ihre grundlegende Struktur und Konzepte vor. Wenn Sie Fragen zu spezifischer Syntax haben, sehen Sie in der [HTL-Spezifikation](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification) nach.
+>Dieses Dokument stellt den Zweck der HTL und einen Überblick über ihre grundlegende Struktur und Konzepte vor. Wenn Sie Fragen zu spezifischer Syntax haben, sehen Sie in der [HTL-Spezifikation](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/specification) nach.
 
 <!--
 specification.md
@@ -34,9 +34,9 @@ specification.md
 
 In AEM wird eine HTL durch mehrere Ebenen definiert.
 
-1. **[HTL-Spezifikation](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - HTL ist eine quelloffene, plattformunabhängige Spezifikation, die von jeder Person frei implementiert werden kann.
-1. **[`Sling`HTL Scripting Engine](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - Das `Sling`-Projekt hat die Referenzimplementierung von HTL erstellt, die von AEM verwendet wird.
-1. **[AEM-Erweiterungen](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - AEM baut auf der `Sling` HTL Scripting Engine auf, um Entwickelnden praktische, AEM-spezifische Funktionen zu bieten.
+1. **[HTL-Spezifikation](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/specification)** - HTL ist eine quelloffene, plattformunabhängige Spezifikation, die von jeder Person frei implementiert werden kann.
+1. **[`Sling`HTL Scripting Engine](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/specification)** - Das `Sling`-Projekt hat die Referenzimplementierung von HTL erstellt, die von AEM verwendet wird.
+1. **[AEM-Erweiterungen](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/specification)** - AEM baut auf der `Sling` HTL Scripting Engine auf, um Entwickelnden praktische, AEM-spezifische Funktionen zu bieten.
 
 Diese HTL-Dokumentation konzentriert sich auf die Verwendung von HTL zur Entwicklung von AEM-Lösungen. Als solche berührt sie alle drei Ebenen und verknüpft bei Bedarf externe Ressourcen.
 
@@ -63,7 +63,7 @@ Es lassen sich zwei verschiedene Arten von Syntaxen unterscheiden:
 * **Blockanweisungen** – Wenn Sie das Element `<h1>` bedingt anzeigen möchten, verwenden Sie ein HTML5-Datenattribut `data-sly-test`. HTL bietet mehrere solcher Attribute, die es ermöglichen, jedem HTML-Element ein bestimmtes Verhalten zuzuordnen, und die alle mit dem Präfix `data-sly` versehen sind.
 * **Ausdruckssprache** – Die HTL-Ausdrücke werden durch Zeichen `${` und `}` getrennt. Diese Ausdrücke werden zur Laufzeit ausgewertet, und ihr Wert wird in den ausgehenden HTML-Stream eingeschleust.
 
-Siehe die [HTL-Spezifikation](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification) für Details zu beiden Syntaxen.
+Siehe die [HTL-Spezifikation](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/specification) für Details zu beiden Syntaxen.
 
 ### Das SLY-Element  {#the-sly-element}
 
@@ -308,7 +308,7 @@ Es folgen zwei kurze Beispiele.
 
 Wenn in diesem Beispiel die HTML-Elemente `head` und `body` in verschiedenen Dateien platziert sind, müsste die Vorlage `clientlib.html` in jede Datei geladen werden, die sie benötigt.
 
-Der Abschnitt über die Template- und Call-Anweisungen in der [HTL-Spezifikation](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification) enthält weitere Details darüber, wie das Deklarieren und Aufrufen solcher Templates funktioniert.
+Der Abschnitt über die Template- und Call-Anweisungen in der [HTL-Spezifikation](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/specification) enthält weitere Details darüber, wie das Deklarieren und Aufrufen solcher Templates funktioniert.
 
 ### Weitergeben von Daten an den Client {#passing-data-to-the-client}
 
