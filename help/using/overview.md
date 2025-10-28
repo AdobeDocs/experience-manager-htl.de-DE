@@ -2,10 +2,10 @@
 title: HTL-Übersicht
 description: Erfahren Sie, wie AEM HTL (HTML Template Language) unterstützt, um ein produktives Webframework auf Unternehmensebene anzubieten, das die Sicherheit erhöht. Dieses Framework ermöglicht es HTML-Entwickelnden ohne Java-Kenntnisse, besser an AEM-Projekten teilhaben zu können.
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-source-git-commit: 3c7afd180151f35db74e105b23ae7e0ed50c7e4e
+source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
 workflow-type: tm+mt
-source-wordcount: '677'
-ht-degree: 100%
+source-wordcount: '680'
+ht-degree: 99%
 
 ---
 
@@ -20,7 +20,11 @@ ht-degree: 100%
 
 HTML Template Language (HTL), unterstützt von Adobe Experience Manager (AEM), hat das Ziel, ein hochproduktives Webframework auf Unternehmensebene bereitzustellen, das die Sicherheit erhöht. Es ermöglicht auch HTML-Entwickelnden ohne Java-Kenntnisse, besser an AEM-Projekten teilhaben zu können.
 
-Die [in AEM 6.0 eingeführte](history.md) HTML Template Language ist das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in AEM. Die HTML-Vorlagensprache unterstützt Web-Entwickler, die zuverlässige Unternehmens-Websites erstellen müssen, dabei, die Sicherheit und die Entwicklungseffizienz zu erhöhen.
+Die [in AEM 6.0 eingeführte](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/history) HTML Template Language ist das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in AEM. Die HTML-Vorlagensprache unterstützt Web-Entwickler, die zuverlässige Unternehmens-Websites erstellen müssen, dabei, die Sicherheit und die Entwicklungseffizienz zu erhöhen.
+
+<!--
+history.md
+-->
 
 ## Erhöhte Sicherheit {#increased-security}
 
@@ -54,8 +58,16 @@ Das folgende Video aus einer [AEM Gems-Sitzung](https://experienceleague.adobe.c
 
 >[!VIDEO](https://video.tv.adobe.com/v/19504/?quality=9)
 
-Bitte beachten Sie, dass sich das Video auf HTL unter [seinem früheren Namen, Sightly](history.md), bezieht.
+Bitte beachten Sie, dass sich das Video auf HTL unter [seinem früheren Namen, Sightly](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/history), bezieht.
+
+<!--
+history.md
+-->
 
 ## Nächste Schritte {#next-steps}
 
-Nachdem Sie nun die Ziele und Vorteile von HTL kennen, können Sie sich mit der Sprache vertraut machen. Siehe [Erste Schritte mit der HTML Template Language](getting-started.md).
+Nachdem Sie nun die Ziele und Vorteile von HTL kennen, können Sie sich mit der Sprache vertraut machen. Siehe [Erste Schritte mit der HTML Template Language](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/getting-started).
+
+<!--
+getting-started.md
+-->

@@ -3,9 +3,9 @@ title: Geschichte von HTL
 description: Für Personen, die schon lange mit AEM arbeiten, enthält dieses Dokument Hintergrundinformationen zu HTL, zu dessen Ablösung von JSP und zur Änderung des früheren Namens Sightly.
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
 index: false
-source-git-commit: 3a416e337337d31f7a7fdb2c78efac46ecf64096
-workflow-type: ht
-source-wordcount: '530'
+source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+workflow-type: tm+mt
+source-wordcount: '532'
 ht-degree: 100%
 
 ---
@@ -50,7 +50,7 @@ Nein. HTL verfügt über leistungsfähige Erweiterungsmechanismen für die Wiede
 
 ### Was sind die Hauptvorteile von HTL im Vergleich zu JSP? {#benefits}
 
-Sicherheit und Projekteffizienz sind die Hauptvorteile, die in der [Übersicht](overview.md) näher erläutert werden.
+Sicherheit und Projekteffizienz sind die Hauptvorteile, die in der [Übersicht](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/overview) näher erläutert werden.
 
 ### Wird es JavaServer-Seiten (JSP) irgendwann nicht mehr geben? {#go-away}
 
@@ -64,4 +64,4 @@ In AEM 6.0 und 6.1 wurde die HTL **Sightly** genannt. Adobe hat sie in **HTML Te
 >
 >Die Namensänderung wirkt sich weder auf den Code noch auf das API aus. Daher ist die Kompatibilität nicht betroffen.
 
-Weitere Informationen über HTL finden Sie im [Leitfaden für die ersten Schritte mit der HTML Templating Language (HTL)](overview.md).
+Weitere Informationen über HTL finden Sie im [Leitfaden für die ersten Schritte mit der HTML Templating Language (HTL)](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/overview).
