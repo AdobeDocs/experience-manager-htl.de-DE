@@ -3,9 +3,9 @@ title: Globale HTL-Objekte
 description: Erfahren Sie mehr über aufzählbare Objekte und Java-unterstützte Objekte in HTL.
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 index: false
-source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+source-git-commit: 84db446b019d74070ce4af64091dd0674dab9d33
 workflow-type: tm+mt
-source-wordcount: '204'
+source-wordcount: '202'
 ht-degree: 100%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 100%
 
 # Globale HTL-Objekte {#htl-global-objects}
 
-Ohne etwas spezifizieren zu müssen, bietet HTL Zugang zu vielen Objekten, die für Entwickelnde nützlich sind. Diese Objekte sind zusätzlich zu denen vorhanden, die möglicherweise über die [Anwendungs-API](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/java-use-api) eingeführt werden.
+Ohne etwas spezifizieren zu müssen, bietet HTL Zugang zu vielen Objekten, die für Entwickelnde nützlich sind. Diese Objekte sind zusätzlich zu denen vorhanden, die möglicherweise über die [Anwendungs-API](java-use-api.md) eingeführt werden.
 
 >[!NOTE]
 >
@@ -67,6 +67,6 @@ Es ist möglich, die HTL-Logik mit JavaScript zu unterstützen. Die bevorzugte o
 
 >[!NOTE]
 >
->[Das JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) gilt nun als veraltet für die Verwendung mit AEM as a Cloud Service. Verwenden Sie stattdessen [das Java Use API](https://experienceleague.adobe.com/de/docs/experience-manager-htl/content/java-use-api).
+>[Das JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) gilt nun als veraltet für die Verwendung mit AEM as a Cloud Service. Verwenden Sie stattdessen [das Java Use API](java-use-api.md).
 >
 >Weitere Informationen zu veralteten und entfernten Funktionen finden Sie in den [Versionshinweisen zu AEM as a Cloud Service](https://experienceleague.adobe.com/de/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features).
