@@ -2,14 +2,16 @@
 title: AEM-Erweiterungen
 description: AEM bietet Erweiterungen der HTL-Spezifikation für AEM an, um Ihnen als Entwicklerin oder Entwickler die Arbeit zu erleichtern.
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
-index: false
-source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: ht
-source-wordcount: '228'
+index: no
+TQID: https://experienceleague.adobe.com/DstGHNLbStXG1SHZgLhmMz2tYVV056CvxWOsl4tuGW4
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
+workflow-type: tm+mt
+source-wordcount: 228
 ht-degree: 100%
 
 ---
-
 
 # AEM-Erweiterungen {#aem-extensions}
 
@@ -33,7 +35,7 @@ In AEM kann `data-sly-include` eine zusätzliche Option `wcmmode` annehmen, die 
 
 Zusätzlich zu Pfaden und `Resources` kann das `data-sly-resource`-Blockelement auch mit [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) oder [`Records`](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) arbeiten. Bei beiden Ansätzen muss die Eigenschaft `resourceName` als Zeichenfolge angegeben werden. Ihr Wert wird verwendet, um eine [synthetische Ressource](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html) zu erstellen, die in den Rendering-Kontext aufgenommen wird. Die restlichen Eigenschaften von `Record` oder `Map`, die an `data-sly-resource` übergeben wurden, werden als normale `Resource`-Eigenschaften verwendet. Wenn die Eigenschaft `sling:resourceType` in dieser Zuordnung fehlt, wird als Ressourcentyp entweder der Wert der `resourceType`-[Ausdrucksoption](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource) oder der Ressourcentyp der aktuellen Ressource, die das Rendering steuert, angenommen.
 
-Unter Berücksichtigung der folgenden Zuordnungs-/Datensatz-Eigenschaften, die im Skriptbereich als `map` verfügbar sind:
+Unter Berücksichtigung der folgenden Zuordnungs-/Eintrags-Eigenschaften, die im Skriptbereich als `map` verfügbar sind:
 
 ```javascript
 {
