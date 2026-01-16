@@ -6,7 +6,7 @@ user-guide-description: Verwenden Sie für herkömmliche AEM-Projekte die HTML T
 feature-set: Experience Manager
 feature: Developer Tools
 role: Developer
-source-git-commit: b73388b1c6db9993cf979f8d3023410dea8d8ae8
+source-git-commit: 9bb2178569ef69312334b50032b799f00bab5727
 workflow-type: tm+mt
 source-wordcount: '50'
 ht-degree: 100%
@@ -16,13 +16,12 @@ ht-degree: 100%
 
 # Hilfe zu HTL in Adobe Experience Manager {#content}
 
-+ [Übersicht](overview.md)
-+ [Erste Schritte mit HTL](getting-started.md)
-+ [HTL-Spezifikation](specification.md)
-+ [Globale HTL-Objekte](global-objects.md)
-+ [HTL-Java-Anwendungs-API](java-use-api.md)
-+ [AEM-Erweiterungen](aem-extensions.md)
-+ [Entwickler-Tools](developer-tools.md)
-+ [Code-Beispiele](code-samples.md)
-+ [Geschichte von HTL](history.md)
-
++ [Übersicht](/help/using/overview.md)
++ [Erste Schritte mit HTL](/help/using/getting-started.md)
++ [HTL-Spezifikation](/help/using/specification.md)
++ [Globale HTL-Objekte](/help/using/global-objects.md)
++ [HTL-Java-Anwendungs-API](/help/using/java-use-api.md)
++ [AEM-Erweiterungen](/help/using/aem-extensions.md)
++ [Entwickler-Tools](/help/using/developer-tools.md)
++ [Code-Beispiele](/help/using/code-samples.md)
++ [Geschichte von HTL](/help/using/history.md)
