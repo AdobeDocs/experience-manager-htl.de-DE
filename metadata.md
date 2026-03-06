@@ -3,14 +3,14 @@ solution: Experience Manager
 type: Documentation
 product: adobe experience manager
 git-repo: https://github.com/AdobeDocs/experience-manager-htl.de-DE
-index: y
+index: true
 landing-page-name: experience-manager
 landing-page-breadcrumb-title: AEM
 recommendations: noDisplay
-source-git-commit: 5c7a0f5795bcbb3b4a5fb34f2d49aad6aa31122f
+source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
-source-wordcount: '81'
-ht-degree: 40%
+source-wordcount: '86'
+ht-degree: 2%
 
 ---
 
@@ -20,10 +20,10 @@ ht-degree: 40%
 Das GitHub-Authoring-System definiert Metadaten hierarchisch mit zunehmenden Präzedenzfällen, wie im Folgenden dargestellt:
 
 1. metadata.md
-1. IHV
+1. toC
 1. Artikel
 
-Die in der Datei „metadata.md“ definierten Metadaten gelten für das gesamte Repository, können jedoch auf Inhaltsverzeichnis- und Artikelebene überschrieben werden. Das Überschreiben der Metadaten sollte auf der niedrigstmöglichen Ebene erfolgen.
+Die in der Datei „metadata.md“ definierten Metadaten gelten für das gesamte Repository, können jedoch auf Inhaltsverzeichnis- und Artikelebene überschrieben werden. Jede Überschreibung der Metadaten sollte auf der niedrigstmöglichen Ebene erfolgen.
 
 Die Metadaten im `experience-manager-core-components.en`-Repository sind das erforderliche Minimum.
 
@@ -31,7 +31,7 @@ metadata.md
 
 * `product`
 * `git-repo`
-* `index: y`
+* `index: true`
 
 Wird nicht mehr verwendet:
 
@@ -42,7 +42,7 @@ Wird nicht mehr verwendet:
 * `tutorials-title`
 * `tutorials-url`
 
-IHVs
+toCS
 
 * `sub-product`
 * `user-guide-title`
@@ -51,5 +51,5 @@ Artikel
 
 * `title`
 * `description`
-* `index: n` (nur für ältere Komponentenversionen)
+* `index: false` (nur für frühere Versionen von Komponenten)
 
