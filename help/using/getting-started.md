@@ -11,15 +11,15 @@ topic_v2:
   - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
   - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
 source-git-commit: f487047a68e98d1b089e0e7124ab91f3281d51ad
-workflow-type: tm+mt
-source-wordcount: 2077
-ht-degree: 99%
+workflow-type: ht
+source-wordcount: 2153
+ht-degree: 100%
 
 ---
 
 # Erste Schritte mit HTL {#getting-started-with-htl}
 
-Die HTML-Vorlagensprache (HTL) ist das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in Adobe Experience Manager. Wie bei allen Server-seitigen HTML-Templating-Systemen definiert eine HTL-Datei die an den Browser gesendete Ausgabe, indem sie den HTML-Code selbst, einige grundlegende Darstellungslogiken sowie Variablen angibt, die zur Laufzeit ausgewertet werden.
+HTML Template Language (HTL) ist das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in Adobe Experience Manager. Wie bei allen Server-seitigen HTML-Templating-Systemen definiert eine HTL-Datei die an den Browser gesendete Ausgabe, indem sie den HTML-Code selbst, einige grundlegende Darstellungslogiken sowie Variablen angibt, die zur Laufzeit ausgewertet werden.
 
 Dieses Dokument gibt einen Überblick über den Zweck der HTL sowie eine Einführung in die grundlegenden Konzepte und Konstrukte der Sprache.
 
@@ -51,7 +51,7 @@ Die HTML-Vorlagensprache verwendet eine Ausdruckssprache, um Teile des Inhalts i
 >
 >Zum Ausführen der meisten auf dieser Seite bereitgestellten Beispiele kann eine als [Read Eval Print Loop (REPL)](https://github.com/adobe/aem-htl-repl) bezeichnete Live-Ausführungsumgebung verwendet werden.
 
-### Blöcke und Ausdrücke  {#blocks-and-expressions}
+### Blöcke und Ausdrücke {#blocks-and-expressions}
 
 Hier finden Sie ein erstes Beispiel, das in der Datei `template.html` enthalten sein könnte:
 
@@ -68,7 +68,7 @@ Es lassen sich zwei verschiedene Arten von Syntaxen unterscheiden:
 
 Siehe die [HTL-Spezifikation](specification.md) für Details zu beiden Syntaxen.
 
-### Das SLY-Element  {#the-sly-element}
+### Das SLY-Element {#the-sly-element}
 
 Ein zentrales Konzept von HTL besteht darin, die Möglichkeit zur Wiederverwendung vorhandener HTML-Elemente zur Definition von Blockanweisungen zu bieten. Durch diese Wiederverwendung müssen keine zusätzlichen Trennzeichen eingefügt werden, um festzulegen, wo die Anweisung beginnt und endet. Wenn Sie das Markup kommentieren, wird statisches HTML unauffällig in eine dynamische Vorlage umgewandelt, ohne die HTML-Gültigkeit zu verändern. Dadurch wird eine ordnungsgemäße Anzeige auch für statische Dateien sichergestellt.
 
@@ -112,7 +112,7 @@ und das Element `div` hätte mit der Bedingung versehen werden können:
 </div>
 ```
 
-### HTL-Kommentare  {#htl-comments}
+### HTL-Kommentare {#htl-comments}
 
 Das folgende Beispiel zeigt einen HTL-Kommentar in der ersten Zeile und einen HTML-Kommentar in der zweiten Zeile.
 
@@ -127,13 +127,13 @@ Die Inhalte der HTML-Standardkommentare werden jedoch weitergegeben, und die Aus
 
 HTML-Kommentare können keine HTL-Kommentare enthalten und umgekehrt.
 
-### Spezielle Kontexte  {#special-contexts}
+### Spezielle Kontexte {#special-contexts}
 
 Um HTL bestmöglich zu verwenden, ist es wichtig, die Konsequenzen zu verstehen, die sich daraus ergeben, dass sie auf der HTML-Syntax basiert.
 
 Weitere Einzelheiten finden Sie im Abschnitt [Anzeigekontext](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#121-display-context) der HTL-Spezifikation.
 
-### Element- und Attributnamen  {#element-and-attribute-names}
+### Element- und Attributnamen {#element-and-attribute-names}
 
 Ausdrücke können nur in HTML-Text oder Attributwerte eingefügt werden, nicht aber in Element- oder Attributnamen, sonst wäre es kein gültiges HTML mehr. Zum dynamischen Festlegen der Elementnamen kann die Anweisung `data-sly-element` für die gewünschten Elemente verwendet werden und zum dynamischen Festlegen der Attributnamen oder sogar zum gleichzeitigen Festlegen von mehreren Attributen die Anweisung `data-sly-attribute`.
 
@@ -186,11 +186,11 @@ Hier ist ein Beispiel dafür, wie der Kontext für Ausdrücke innerhalb von Skri
 
 Weitere Einzelheiten zur Steuerung des Escapings finden Sie im Abschnitt [Anzeigekontext der Ausdruckssprache](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#121-display-context) der HTL-Spezifikationen.
 
-## Allgemeine HTL-Funktionen  {#general-capabilities-of-htl}
+## Allgemeine HTL-Funktionen {#general-capabilities-of-htl}
 
 In diesem Abschnitt werden die allgemeinen Funktionen der HTML-Vorlagensprache kurz behandelt.
 
-### Anwendungs-API für den Zugriff auf die Logik  {#use-api-for-accessing-logic}
+### Anwendungs-API für den Zugriff auf die Logik {#use-api-for-accessing-logic}
 
 Mit der Java-Anwendungs-API der HTML-Vorlagensprache (HTL) wird es einer HTL-Datei ermöglicht, in einer benutzerdefinierten Java-Klasse über `data-sly-use` auf die Hilfsmethoden zuzugreifen. Durch diesen Prozess kann die gesamte komplexe Geschäftslogik im Java-Code verschachtelt werden, während der HTL-Code nur die direkte Markup-Produktion verarbeiten muss.
 
@@ -286,7 +286,7 @@ Jede Hilfsvorlage erwartet eine `categories`-Option für das Referenzieren der g
 
 Es folgen zwei kurze Beispiele.
 
-#### Vollständiges Laden mehrerer Client-Bibliotheken gleichzeitig  {#loading-multiple-client-libraries-fully-at-once}
+#### Vollständiges Laden mehrerer Client-Bibliotheken gleichzeitig {#loading-multiple-client-libraries-fully-at-once}
 
 ```xml
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
@@ -348,7 +348,7 @@ for (var i = 0; i < elements.length; i++) {
 }
 ```
 
-### Arbeiten mit Client-seitigen Vorlagen  {#working-with-client-side-templates}
+### Arbeiten mit Client-seitigen Vorlagen {#working-with-client-side-templates}
 
 Ein spezieller Fall, in dem die im Abschnitt [Einschränkungen für Erhebungen spezieller Kontexte](#lifting-limitations-of-special-contexts) erläuterte Technik legitimerweise verwendet werden kann, besteht im Schreiben von Client-seitigen Vorlagen (beispielsweise Handlebars), die sich in `scrip`-Elementen befinden. Der Grund, weshalb diese Technik in diesem Fall sicher verwendet werden kann, besteht darin, dass das `script`-Element nicht wie angenommen JavaScript-Elemente enthält, sondern weitere HTML-Elemente. Im Folgenden finden Sie ein Beispiel, wie dies funktionieren würde:
 

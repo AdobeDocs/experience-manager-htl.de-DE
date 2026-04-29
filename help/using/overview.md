@@ -10,8 +10,8 @@ role_v2:
 topic_v2:
   - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
 source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
-workflow-type: tm+mt
-source-wordcount: 677
+workflow-type: ht
+source-wordcount: 716
 ht-degree: 100%
 
 ---
@@ -36,7 +36,7 @@ Das gleiche Ergebnis kann mit Vorlagensprachen wie JSP erreicht werden, aber in 
 
 ## Vereinfachte Entwicklung {#simplified-development}
 
-Die HTML-Vorlagensprache ist einfach zu erlernen und ihre Funktionen sind absichtlich begrenzt, um sicherzustellen, dass sie einfach und unkompliziert bleibt. Sie verfügt über leistungsstarke Mechanismen für das Strukturieren von Markup und das Aufrufen der Logik. Zugleich erzwingt sie immer die strenge Trennung von Belangen zwischen Markup und Logik. Bei der HTL an sich handelt es sich um den Standard HTML5, da sie Ausdrücke und Datenattribute verwendet, um das Markup auf dynamische Weise mit Anmerkungen zu versehen. Dieser Ansatz wahrt die Gültigkeit und Lesbarkeit des Markups. Die Auswertung der Ausdrücke und Datenattribute erfolgt vollständig Server-seitig und ist auf der Client-Seite nicht sichtbar, wo jedes gewünschte JavaScript-Framework ohne Störung verwendet werden kann. 
+Die HTML-Vorlagensprache ist einfach zu erlernen und ihre Funktionen sind absichtlich begrenzt, um sicherzustellen, dass sie einfach und unkompliziert bleibt. Sie verfügt über leistungsstarke Mechanismen für das Strukturieren von Markup und das Aufrufen der Logik. Zugleich erzwingt sie immer die strenge Trennung von Belangen zwischen Markup und Logik. Bei der HTL an sich handelt es sich um den Standard HTML5, da sie Ausdrücke und Datenattribute verwendet, um das Markup auf dynamische Weise mit Anmerkungen zu versehen. Dieser Ansatz wahrt die Gültigkeit und Lesbarkeit des Markups. Die Auswertung der Ausdrücke und Datenattribute erfolgt vollständig Server-seitig und ist auf der Client-Seite nicht sichtbar, wo jedes gewünschte JavaScript-Framework ohne Störung verwendet werden kann.
 
 Durch diese Funktionen können HTML-Entwickelnde ohne Java-Kenntnisse HTL-Vorlagen bearbeiten, Teil des Entwicklungs-Teams sein und die Zusammenarbeit mit den Java-Entwicklungsexpertinnen und -experten optimieren. Umgekehrt können sich Java-Entwickelnde wiederum auf den Backend-Code konzentrieren und müssen sich nicht um HTML kümmern.
 
