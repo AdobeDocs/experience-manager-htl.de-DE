@@ -3,21 +3,18 @@ title: HTL-Java-Anwendungs-API
 description: Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmethoden in einer benutzerdefinierten Java-Klasse.
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 index: false
-TQID: https://experienceleague.adobe.com/lCMIs0khRwcDzk97TQcNMMl4h7OZNf3KlK2YA4ANbZQ
+TQID: 'https://experienceleague.adobe.com/lCMIs0khRwcDzk97TQcNMMl4h7OZNf3KlK2YA4ANbZQ'
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
-  - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
-source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
-workflow-type: ht
-source-wordcount: 1643
+    internal-label: Developer
+source-git-commit: ad1e15465b8b969663842d4946a1fa182821bcc1
+workflow-type: tm+mt
+source-wordcount: '1643'
 ht-degree: 100%
-
 ---
-
 # HTL-Java-Anwendungs-API {#htl-java-use-api}
 
 Die HTL-Java-Anwendungs-API ermöglicht einer HTL-Datei den Zugriff auf Hilfsmethoden in einer benutzerdefinierten Java-Klasse.
@@ -125,7 +122,7 @@ Weitere Einzelheiten finden Sie in den [Javadocs für `com.adobe.cq.sightly.WCMU
 
 Lassen Sie uns nun einen Blick auf die verschiedenen Teile des Codes werfen.
 
-### Lokale vs. Bundle-Java-Klasse {#local-vs-bundle-java-class}
+### Lokale vs. Paket-Java-Klasse {#local-vs-bundle-java-class}
 
 Die Java-Anwendungsklasse kann auf zwei Arten installiert werden:
 
@@ -257,7 +254,7 @@ public class Info extends WCMUsePojo {
 
 ### Attribut `data-sly-use` {#data-sly-use-attribute}
 
-Das Attribut `data-sly-use` wird verwendet, um die Anwendungsklasse innerhalb Ihres HTL-Codes zu initialisieren. In diesem Beispiel gibt das Attribut `data-sly-use` an, dass die Klasse `Info` verwendet wird. Sie können nur den lokalen Namen der Klasse verwenden, da Sie eine lokale Installation verwenden (wobei die Java-Quelldatei im selben Ordner wie die HTL-Datei platziert wurde). Wenn Sie eine Bundle-Installation verwenden würden, müssten Sie den voll qualifizierten Klassennamen angeben.
+Das Attribut `data-sly-use` wird verwendet, um die Anwendungsklasse innerhalb Ihres HTL-Codes zu initialisieren. In diesem Beispiel gibt das Attribut `data-sly-use` an, dass die Klasse `Info` verwendet wird. Sie können nur den lokalen Namen der Klasse verwenden, da Sie eine lokale Installation verwenden (wobei die Java-Quelldatei im selben Ordner wie die HTL-Datei platziert wurde). Wenn Sie eine Paket-Installation verwenden würden, müssten Sie den voll qualifizierten Klassennamen angeben.
 
 Beachten Sie die Verwendung in diesem Beispiel für `/apps/my-example/component/info/info.html`.
 

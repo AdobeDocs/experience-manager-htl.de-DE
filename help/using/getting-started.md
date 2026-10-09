@@ -2,21 +2,18 @@
 title: Erste Schritte mit HTL
 description: Lernen Sie HTL kennen, das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in AEM, und verstehen Sie die wichtigsten Konzepte der Sprache und ihre grundlegenden Konstrukte.
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-TQID: https://experienceleague.adobe.com/6IcNpWu2-PLGresZ1H-HM9HAFL-dY5eF0OyIdXJbJ4s
+TQID: 'https://experienceleague.adobe.com/6IcNpWu2-PLGresZ1H-HM9HAFL-dY5eF0OyIdXJbJ4s'
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
-  - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
-source-git-commit: f487047a68e98d1b089e0e7124ab91f3281d51ad
+    internal-label: Developer
+source-git-commit: ad1e15465b8b969663842d4946a1fa182821bcc1
 workflow-type: tm+mt
-source-wordcount: 2153
+source-wordcount: '2153'
 ht-degree: 100%
-
 ---
-
 # Erste Schritte mit HTL {#getting-started-with-htl}
 
 HTML Template Language (HTL) ist das bevorzugte und empfohlene Server-seitige Vorlagensystem für HTML in Adobe Experience Manager. Wie bei allen Server-seitigen HTML-Templating-Systemen definiert eine HTL-Datei die an den Browser gesendete Ausgabe, indem sie den HTML-Code selbst, einige grundlegende Darstellungslogiken sowie Variablen angibt, die zur Laufzeit ausgewertet werden.
@@ -253,14 +250,14 @@ Wieder ist dieser Prozess deswegen möglich, weil HTL die HTML-Syntax versteht u
 Außerdem ist der Typ der im Ausdruck enthaltenen Variablen von Bedeutung:
 
 * **Zeichenfolge:**
-   * **nicht leer:** Setzt die Zeichenfolge als Attributwert.
-   * **leer:** Entfernt das Attribut vollständig.
+  * **nicht leer:** Setzt die Zeichenfolge als Attributwert.
+  * **leer:** Entfernt das Attribut vollständig.
 
 * **Zahl:** Legt den Wert als Attributwert fest.
 
 * **Boolesch:**
-   * **true:** Zeigt das Attribut ohne Wert an (als ein boolesches HTML-Attribut
-   * **false:** Entfernt das Attribut vollständig.
+  * **true:** Zeigt das Attribut ohne Wert an (als ein boolesches HTML-Attribut
+  * **false:** Entfernt das Attribut vollständig.
 
 Hier ist ein Beispiel dafür, wie ein boolescher Ausdruck die Kontrolle über ein boolesches HTML-Attribut ermöglichen würde:
 
